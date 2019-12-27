@@ -1,0 +1,24 @@
+<svg width="588" height="88" viewBox="0 0 588 88" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="hero title">
+<g id="MENU" filter="url(#filter0_i)">
+<path d="M252.154 18.2L243.258 63H233.53L238.778 36.376L221.69 58.264H217.082L207.866 36.12L202.49 63H192.762L201.722 18.2H210.17L221.37 46.104L243.258 18.2H252.154ZM271.487 26.52L269.567 36.248H290.367L288.767 44.312H267.903L265.855 54.68H290.303L288.575 63H253.887L262.847 18.2H296.703L294.975 26.52H271.487ZM346.873 18.2L337.913 63H329.401L312.697 34.968L307.065 63H296.825L305.785 18.2H314.361L331.065 46.296L336.633 18.2H346.873ZM369.632 63.768C364 63.768 359.584 62.3813 356.384 59.608C353.184 56.792 351.584 52.952 351.584 48.088C351.584 46.68 351.755 45.08 352.096 43.288L357.088 18.2H367.52L362.528 43.096C362.272 44.504 362.144 45.7627 362.144 46.872C362.144 49.56 362.87 51.5867 364.32 52.952C365.814 54.2747 367.968 54.936 370.784 54.936C373.942 54.936 376.459 53.9973 378.336 52.12C380.214 50.2427 381.579 47.2347 382.432 43.096L387.424 18.2H397.6L392.544 43.736C389.814 57.0907 382.176 63.768 369.632 63.768Z" fill="white"/>
+</g>
+<rect id="whiteLine 1" x="247" y="81" width="93" height="7" fill="url(#pattern0)"/>
+</g>
+<defs>
+<filter id="filter0_i" x="192.763" y="16.2" width="204.838" height="47.568" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="-8"/>
+<feGaussianBlur stdDeviation="1"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+</filter>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="scale(0.0107527 0.142857)"/>
+</pattern>
+<image id="image0" data-name="whiteLine.png" width="93" height="7" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAAAHCAQAAADAbYnZAAABD0lEQVQ4y83Uu0oDURRG4W9CIBhvaCGKYGVpI75Aahs7sRF9GJ8kL2Bta2Vhl04sFC+ExBijM5kkM3EsHIKoeGk0q9v73xzWOXB2kPkFO/YtGnoS6xt6+jBRVrIi0DXI857eu5lEJJLkVVtTz6x7nbwTujPU0P9apvhD6bJteyr+lqa6RKTlWM25jvZ36ge2LOVZ0aT/IROKxR4E1t27NP9WPcjKNiybUzKjYEJZxZpxIHUhGl2jreXMoczQlRZBVhsTUTpCqVQI6k7caDrNa6Nk9OpVu8abWMOV49HHvlY1oOhIz6oFU0om8nBa4cMBj75fRn3xJ91Q+ivV152UCQx0JSLPUpNifaFQYlPT7Qv7bmmJgKcogAAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>
