@@ -10,13 +10,14 @@ const Styled = styled.section`
     display: grid;
     justify-items: center;
     gap: 3em;
+    justify-content: center;
   }
 
   /* TAbs */
   .taps--container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
+    gap: 0.5em;
     justify-content: space-between;
     width: 100%;
     align-items: center;
@@ -36,6 +37,7 @@ const Styled = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
     gap: 3em;
+    padding: 0 1em;
     width: 100%;
   }
 
@@ -66,6 +68,10 @@ const Styled = styled.section`
     display: flex;
     flex-direction: column;
     height: 100%;
+  }
+
+  .menu--title {
+    color: var(--accent-clr);
   }
 
   .price {

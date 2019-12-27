@@ -23,9 +23,9 @@ const Layout = ({
           rel='stylesheet'
         />
       </Head>
+      <Navbar />
       <header>
         <Hero heroSize={heroSize} img={heroImg} heroOpacity={heroOpacity}>
-          <Navbar />
           <Banner titleImg={titleImg} banner={banner} />
         </Hero>
       </header>

@@ -1,19 +1,21 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import Link from 'next/link';
 import Socials from './ui/socials';
 
 const Styled = styled.div`
-  position: absolute;
+  position: ${props => (props.navScroll ? 'fixed' : 'absolute')};
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  background-color: ${props =>
+    props.navScroll ? 'var(--primary-clr)' : 'none'};
 
   &::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -79,7 +81,8 @@ const Styled = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1em;
+    margin-top: ${props => (props.navScroll ? '0' : '1em')};
+    padding: ${props => (props.navScroll ? '.5em' : '0')};
   }
 
   .brand-logo {
@@ -147,7 +150,7 @@ const Styled = styled.div`
   .navbar--group {
     z-index: 10;
     transition: var(--tran--opa);
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     background-color: var(--white-clr);
@@ -184,14 +187,18 @@ const Styled = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    position: absolute;
-    margin-top: 1em;
+    position: ${props => (props.navScroll ? 'fixed' : 'absolute')};
+    margin-top: ${props => (props.navScroll ? '0' : '1em')};
     display: grid;
     justify-content: center;
 
     .brand-logo,
     .nav--toggle {
       display: none;
+    }
+
+    .brand-logo {
+      display: ${props => props.navScroll && 'block'};
     }
 
     .brand-logo--top {
@@ -203,7 +210,7 @@ const Styled = styled.div`
 
     /* Top head */
     .head--top {
-      display: flex;
+      display: ${props => (props.navScroll ? 'none' : 'flex')};
       justify-content: space-between;
       align-items: center;
       padding: 0;
@@ -217,8 +224,9 @@ const Styled = styled.div`
     }
 
     .navbar {
-      border-top: 1px solid var(--white-clr);
-      padding: 1em 4em 0;
+      border-top: ${props =>
+        props.navScroll ? 'none' : '1px solid var(--white-clr)'};
+      padding: ${props => (props.navScroll ? '.5em' : '1em 4em 0')};
     }
 
     /* Navbar */
@@ -234,7 +242,6 @@ const Styled = styled.div`
       flex-direction: row;
       align-items: center;
       justify-content: space-evenly;
-      width: 1000px;
       transform: translateX(0);
     }
 
@@ -252,9 +259,31 @@ const Styled = styled.div`
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [navScroll, setNavScroll] = useState(false);
+  const [navheight, setNavHeight] = useState(null);
+  const navRef = useRef();
+
+  useEffect(() => {
+    setNavHeight(navRef.current.scrollHeight);
+
+    // if (navheight === null) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > navheight) {
+        setNavScroll(true);
+      } else {
+        setNavScroll(false);
+      }
+    });
+  }, [navheight]);
 
   return (
-    <Styled toggle={toggle} className='navbar'>
+    <Styled
+      ref={navRef}
+      toggle={toggle}
+      className='navbar'
+      navScroll={navScroll}
+    >
       <div className='head--top'>
         <Socials />
         <Link href='/'>

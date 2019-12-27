@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Button from './button';
 
 const Styled = styled.div`
+  padding: 0 0.5em;
   .subtitle {
     font-family: var(--fn-reenie);
     font-size: 1.5rem;

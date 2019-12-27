@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import Button from '../ui/button';
-import TitleBanner from '../ui/titleBanner';
 
 const Styled = styled.section`
   max-width: 1400px;
@@ -11,7 +9,7 @@ const Styled = styled.section`
 
   .title {
     color: var(--primary-clr);
-    margin-bottom: 1em;
+    margin: 0 0.1em 1em;
   }
 
   .para {
