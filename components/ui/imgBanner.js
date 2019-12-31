@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from './button';
+import Fade from 'react-reveal/Fade';
 
 const Styled = styled.section`
   position: relative;
@@ -69,9 +70,13 @@ const ImgBanner = ({
 }) => (
   <Styled className='img--banner section' img={img} posiion={posiion}>
     <div className='img--banner__img' />
-    <h2 className='title'>{title}</h2>
-    <h3 className='subtitle'>{subtile}</h3>
-    <Button toLink={toLink} title={btnTitle} />
+    <Fade top>
+      <h2 className='title'>{title}</h2>
+      <h3 className='subtitle'>{subtile}</h3>
+      <Fade top delay={300}>
+        <Button toLink={toLink} title={btnTitle} />
+      </Fade>
+    </Fade>
   </Styled>
 );
 

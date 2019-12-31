@@ -332,5 +332,19 @@ p {
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: 1s fadeIn linear;
+  transition: var(--ease--in--out--02s);
+}
+
 
 /*# sourceMappingURL=styles.chunk.css.map*/

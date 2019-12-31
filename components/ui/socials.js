@@ -15,7 +15,7 @@ const Styled = styled.div`
 
     &:hover,
     &:focus {
-      color: var(--second-clr);
+      color: var(--accent-clr);
     }
   }
 

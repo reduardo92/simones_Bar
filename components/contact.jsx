@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 import TitleBanner from './ui/titleBanner';
 import TabStyled from './ui/tabs';
@@ -102,76 +103,81 @@ const Contact = () => {
   };
 
   return (
-    <Styled className='contact section'>
-      <TitleBanner
-        topTitle='GET IN TOUCH'
-        title='CONTACT US'
-        botTitle='SHOOT US A QUESTION'
-      />
-      <Icon className='info' href='tel:+312668601'>
-        <MdLocalPhone /> (312) 666-8601
-      </Icon>
-      <Icon className='info'>
-        <MdEmail /> info@simonesbar.com
-      </Icon>
-      <form
-        className='form'
-        name='contact'
-        method='POST'
-        data-netlify-recaptcha='true'
-        data-netlify='true'
-        onSubmit={handleSubmit}
-      >
-        <input
-          onChange={handleChange}
-          value={name}
-          name='name'
-          type='text'
-          className='input--link name'
-          placeholder='FULL NAME'
-        />
-        <input
-          onChange={handleChange}
-          value={email}
-          name='email'
-          type='text'
-          className='input--link email--form'
-          placeholder='EMAIL'
-        />
-        <input
-          onChange={handleChange}
-          value={phone}
-          name='phone'
-          type='text'
-          className='input--link phone'
-          placeholder='PHONE NUMBER'
-        />
-        <select
-          onChange={handleChange}
-          value={subject}
-          name='subject'
-          className='input--link subject'
-          placeholder='SUBJECT'
+    <Fade>
+      <Styled className='contact section'>
+        <Fade bottom>
+          <TitleBanner
+            topTitle='GET IN TOUCH'
+            title='CONTACT US'
+            botTitle='SHOOT US A QUESTION'
+          />
+          <Icon className='info' href='tel:+312668601'>
+            <MdLocalPhone /> (312) 666-8601
+          </Icon>
+          <Icon className='info'>
+            <MdEmail /> info@simonesbar.com
+          </Icon>
+        </Fade>
+
+        <form
+          className='form'
+          name='contact'
+          method='POST'
+          data-netlify-recaptcha='true'
+          data-netlify='true'
+          onSubmit={handleSubmit}
         >
-          <option>Select a subject...</option>
-          <option>General Inquiries</option>
-          <option>Music Bookings</option>
-          <option>Special Events</option>
-        </select>
-        <textarea
-          onChange={handleChange}
-          value={message}
-          className='textarea'
-          name='message'
-          cols='30'
-          rows='9'
-          placeholder='MESSAGE / QUESTION'
-        ></textarea>
-        <TabStyled className='form--button' type='submit'>
-          send message
-        </TabStyled>
-      </form>
-    </Styled>
+          <input
+            onChange={handleChange}
+            value={name}
+            name='name'
+            type='text'
+            className='input--link name'
+            placeholder='FULL NAME'
+          />
+          <input
+            onChange={handleChange}
+            value={email}
+            name='email'
+            type='text'
+            className='input--link email--form'
+            placeholder='EMAIL'
+          />
+          <input
+            onChange={handleChange}
+            value={phone}
+            name='phone'
+            type='text'
+            className='input--link phone'
+            placeholder='PHONE NUMBER'
+          />
+          <select
+            onChange={handleChange}
+            value={subject}
+            name='subject'
+            className='input--link subject'
+            placeholder='SUBJECT'
+          >
+            <option>Select a subject...</option>
+            <option>General Inquiries</option>
+            <option>Music Bookings</option>
+            <option>Special Events</option>
+          </select>
+          <textarea
+            onChange={handleChange}
+            value={message}
+            className='textarea'
+            name='message'
+            cols='30'
+            rows='9'
+            placeholder='MESSAGE / QUESTION'
+          ></textarea>
+          <TabStyled className='form--button' type='submit'>
+            send message
+          </TabStyled>
+        </form>
+      </Styled>
+    </Fade>
   );
 };
 

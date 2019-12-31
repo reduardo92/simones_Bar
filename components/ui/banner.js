@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from './button';
+import Fade from 'react-reveal/Fade';
 
 const Styled = styled.div`
   padding: 0 0.5em;
@@ -32,16 +33,19 @@ const Styled = styled.div`
 const Banner = ({ titleImg, banner }) => {
   return (
     <Styled>
-      {banner === 'home' ? (
-        <>
-          <img src='simones.svg' className='title-img' />
-          <h2 className='subtitle'>Bar & Grill in the heart of Pilsen</h2>
-
-          <Button title='visit us' toLink='/contact' />
-        </>
-      ) : (
-        <img src={titleImg} className='title-img' />
-      )}
+      <Fade bottom>
+        {banner === 'home' ? (
+          <>
+            <img src='simones.svg' className='title-img' />
+            <h2 className='subtitle'>Bar & Grill in the heart of Pilsen</h2>
+            <Fade top delay={500}>
+              <Button title='visit us' toLink='/contact' />
+            </Fade>
+          </>
+        ) : (
+          <img src={titleImg} className='title-img' />
+        )}
+      </Fade>
     </Styled>
   );
 };

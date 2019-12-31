@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
 import ImgBox from '../ui/imgBox';
+import Fade from 'react-reveal/Fade';
 
 const Styled = styled.section`
   max-width: 1400px;
@@ -53,15 +54,17 @@ const Gallery = () => {
   };
 
   return (
-    <Styled>
-      {Object.values(imgs).map((img, i) => (
-        <ImgBox key={i} className='img-box' img={img}>
-          <a className='icon' href={img} target='_blank'>
-            <FaSearch />
-          </a>
-        </ImgBox>
-      ))}
-    </Styled>
+    <Fade>
+      <Styled>
+        {Object.values(imgs).map((img, i) => (
+          <ImgBox key={i} className='img-box' img={img}>
+            <a className='icon' href={img} target='_blank'>
+              <FaSearch />
+            </a>
+          </ImgBox>
+        ))}
+      </Styled>
+    </Fade>
   );
 };
 

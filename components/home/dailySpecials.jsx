@@ -1,3 +1,4 @@
+import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 import TitleBanner from '../ui/titleBanner';
 import Button from '../ui/button';
@@ -149,64 +150,76 @@ const Styled = styled.section`
 
 const DailySpecials = ({ showButton }) => {
   return (
-    <Styled className='daily--specials section' showButton={showButton}>
-      <TitleBanner
-        topTitle='save up'
-        title='daily specials'
-        botTitle='enjoy yourself'
-      />
-      <img src='/ncaho_burger.svg' alt='chip burger' className='chip--burger' />
-      <div className='daily--banner--container'>
-        <img src='/duckburger.jpg' alt='burger image' className='burger--img' />
-        <div className='banner'>
-          <h2 className='banner--title'>GET SAVING</h2>
-          <ul className='banner--ul'>
-            <li className='banner--link'>
-              Sunday:
-              <span className='side--text'>dollar off drafts until 8pm</span>
-            </li>
-            <li className='banner--link'>
-              Monday:
-              <span className='side--text'>PBR tallboy and any pizza $7</span>
-            </li>
-            <li className='banner--link'>
-              Tuesday:
-              <span className='side--text'>
-                dollar off craft cans + bottles; $2 off nachos
-              </span>
-            </li>
-            <li className='banner--link'>
-              Wednesday:
-              <span className='side--text'>
-                PBR tallboy+Evan Williams shot $5; $2 off wings
-              </span>
-            </li>
-            <li className='banner--link'>
-              Thursday:
-              <span className='side--text'>
-                $4 well drinks (single pour only), $2 off quesadillas
-              </span>
-            </li>
-            <li className='banner--link'>
-              Every Day Until 5pm:
-              <span className='side--text'>
-                1/2 lb angus or vegan burger, hand cut fries and a PBR tallboy
-                $8
-              </span>
-            </li>
-          </ul>
-          <p className='close--caption'>
-            18% gratuity will be added to parties of 6 or more
-          </p>
-          <p className='close--caption'>
-            No more than two forms of payment per check/table extra side of
-            sauce 50 cents carryout charge 75 cents
-          </p>
-          <Button toLink='/menu' title='view more' />
+    <Fade>
+      <Styled className='daily--specials section' showButton={showButton}>
+        <Fade bottom>
+          <TitleBanner
+            topTitle='save up'
+            title='daily specials'
+            botTitle='enjoy yourself'
+          />
+        </Fade>
+        <img
+          src='/ncaho_burger.svg'
+          alt='chip burger'
+          className='chip--burger'
+        />
+        <div className='daily--banner--container'>
+          <img
+            src='/duckburger.jpg'
+            alt='burger image'
+            className='burger--img'
+          />
+          <div className='banner'>
+            <h2 className='banner--title'>GET SAVING</h2>
+            <ul className='banner--ul'>
+              <li className='banner--link'>
+                Sunday:
+                <span className='side--text'>dollar off drafts until 8pm</span>
+              </li>
+              <li className='banner--link'>
+                Monday:
+                <span className='side--text'>PBR tallboy and any pizza $7</span>
+              </li>
+              <li className='banner--link'>
+                Tuesday:
+                <span className='side--text'>
+                  dollar off craft cans + bottles; $2 off nachos
+                </span>
+              </li>
+              <li className='banner--link'>
+                Wednesday:
+                <span className='side--text'>
+                  PBR tallboy+Evan Williams shot $5; $2 off wings
+                </span>
+              </li>
+              <li className='banner--link'>
+                Thursday:
+                <span className='side--text'>
+                  $4 well drinks (single pour only), $2 off quesadillas
+                </span>
+              </li>
+              <li className='banner--link'>
+                Every Day Until 5pm:
+                <span className='side--text'>
+                  1/2 lb angus or vegan burger, hand cut fries and a PBR tallboy
+                  $8
+                </span>
+              </li>
+            </ul>
+            <p className='close--caption'>
+              18% gratuity will be added to parties of 6 or more
+            </p>
+            <p className='close--caption'>
+              No more than two forms of payment per check/table extra side of
+              sauce 50 cents carryout charge 75 cents
+            </p>
+            <Button toLink='/menu' title='view more' />
+          </div>
         </div>
-      </div>
-      <img src='/beer_fries.png' alt='beer fries' className='beer--fries' />
-    </Styled>
+        <img src='/beer_fries.png' alt='beer fries' className='beer--fries' />
+      </Styled>
+    </Fade>
   );
 };
 

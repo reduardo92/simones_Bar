@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import Fade from 'react-reveal/Fade';
 
 const Styled = styled.a`
   font-family: var(--fn-monterrat);

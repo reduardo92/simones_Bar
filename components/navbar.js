@@ -1,17 +1,19 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
-import Link from 'next/link';
+import Link from '../components/Link';
 import Socials from './ui/socials';
 
 const Styled = styled.div`
   position: ${props => (props.navScroll ? 'fixed' : 'absolute')};
+  padding: 0.5em 0;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   background-color: ${props =>
     props.navScroll ? 'var(--primary-clr)' : 'none'};
+  animation: 1s fadeIn linear;
 
   &::before {
     content: '';
@@ -44,6 +46,11 @@ const Styled = styled.div`
     }
   }
 
+  /* Change Nav Links Active */
+  .selected {
+    color: var(--accent-clr) !important;
+  }
+
   /* Top head */
   .head--top {
     display: flex;
@@ -64,7 +71,12 @@ const Styled = styled.div`
         font-size: 0.85rem;
         width: max-content;
         cursor: pointer;
+        transition: var(--ease--in--out--02s);
 
+        &:hover,
+        &:focus {
+          color: var(--accent-clr);
+        }
         svg {
           margin-right: 0.5em;
         }
@@ -189,8 +201,8 @@ const Styled = styled.div`
   @media screen and (min-width: 1024px) {
     position: ${props => (props.navScroll ? 'fixed' : 'absolute')};
     margin-top: ${props => (props.navScroll ? '0' : '1em')};
-    display: grid;
-    justify-content: center;
+    max-width: ${props => (props.navScroll ? '100%' : '1200px')};
+    margin: 0 auto;
 
     .brand-logo,
     .nav--toggle {
@@ -216,6 +228,7 @@ const Styled = styled.div`
       padding: 0;
       justify-self: center;
       width: 1000px;
+      margin: 0 auto;
 
       .info {
         flex-direction: column;
@@ -328,7 +341,7 @@ const Navbar = () => {
           </div>
           <li className='nav--link'>
             <Link href='/'>
-              <a className='nav--link__item'> HOME</a>
+              <a className='nav--link__item'>HOME</a>
             </Link>
           </li>
           <li className='nav--link'>

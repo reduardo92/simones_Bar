@@ -1,3 +1,4 @@
+import Fade from 'react-reveal/Fade';
 import GridTwo from '../ui/gridTwo';
 import TitleBanner from '../ui/titleBanner';
 import Button from '../ui/button';
@@ -52,31 +53,35 @@ const Img = styled.img`
 
 const LiveMusic = () => (
   <GridTwo className='section'>
-    <Img src='/livemusic.svg' alt='live music img' />
-    <StyledEvent className='event--content'>
-      <TitleBanner
-        topTitle='live music'
-        title='Music & Event Inquiries'
-        botTitle='get your jam on'
-      />
-      <p className='event--text'>
-        Simone’s plays host to Chicago’s wide-ranging DJ and Music
-        entertainment. The Lab is also available for private events. For more
-        information:
-      </p>
-      <div className='event--contacts'>
-        <Icon>
-          <MdEmail /> musicbookings@simonesbar.com
-        </Icon>
-        <Icon>
-          <MdEmail /> eventbookings@simonesbar.com
-        </Icon>
-        <Icon href='tel:+312668601'>
-          <MdLocalPhone /> (312) 666-8601
-        </Icon>
-      </div>
-      <Button toLink='/contact' title='contact us' hoverclr />
-    </StyledEvent>
+    <Fade bottom>
+      <Img src='/livemusic.svg' alt='live music img' />
+      <StyledEvent className='event--content'>
+        <TitleBanner
+          topTitle='live music'
+          title='Music & Event Inquiries'
+          botTitle='get your jam on'
+        />
+        <p className='event--text'>
+          Simone’s plays host to Chicago’s wide-ranging DJ and Music
+          entertainment. The Lab is also available for private events. For more
+          information:
+        </p>
+        <div className='event--contacts'>
+          <Icon>
+            <MdEmail /> musicbookings@simonesbar.com
+          </Icon>
+          <Icon>
+            <MdEmail /> eventbookings@simonesbar.com
+          </Icon>
+          <Icon href='tel:+312668601'>
+            <MdLocalPhone /> (312) 666-8601
+          </Icon>
+        </div>
+        <Fade top delay={400}>
+          <Button toLink='/contact' title='contact us' hoverclr />
+        </Fade>
+      </StyledEvent>
+    </Fade>
   </GridTwo>
 );
 

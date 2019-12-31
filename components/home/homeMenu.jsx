@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 import TitleBanner from '../ui/titleBanner';
 import Button from '../ui/button';
@@ -33,12 +34,6 @@ const Styled = styled.section`
 
   .tab {
     color: var(--white-clr);
-    background-color: var(--second-clr);
-    padding: 0.8em 1.3em;
-    border-radius: 5px;
-    text-transform: uppercase;
-    border: none;
-    font-weight: var(--fw-bold);
   }
 
   .menu {
@@ -80,13 +75,6 @@ const Styled = styled.section`
       border-color: var(--second-clr);
     }
   }
-
-  /* .activeTab {
-    transform: scale(0.95);
-    background-color: transparent;
-    border-color: var(--second-clr);
-    outline-color: var(--second-clr);
-  } */
 
   @media screen and (min-width: 760px) {
     .container {
@@ -246,13 +234,25 @@ Blanc De Camarsac Sauv Blanc`,
           botTitle='come eat some good food'
         />
         <div className='taps--container'>
-          <TabStyled onClick={() => setTab('drinks')} active={tab === 'drinks'}>
+          <TabStyled
+            className={tab === 'drinks' && 'tab'}
+            onClick={() => setTab('drinks')}
+            active={tab === 'drinks'}
+          >
             drinks
           </TabStyled>
-          <TabStyled onClick={() => setTab('beer')} active={tab === 'beer'}>
+          <TabStyled
+            className={tab === 'beer' && 'tab'}
+            onClick={() => setTab('beer')}
+            active={tab === 'beer'}
+          >
             beer
           </TabStyled>
-          <TabStyled onClick={() => setTab('food')} active={tab === 'food'}>
+          <TabStyled
+            className={tab === 'food' && 'tab'}
+            onClick={() => setTab('food')}
+            active={tab === 'food'}
+          >
             food
           </TabStyled>
         </div>

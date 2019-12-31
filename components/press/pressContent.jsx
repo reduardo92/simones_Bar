@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
 import ImgBox from '../ui/imgBox';
+import Fade from 'react-reveal/Fade';
 
 const Styled = styled.section`
   max-width: 1400px;
@@ -46,30 +47,32 @@ const PressContent = () => {
   };
 
   return (
-    <Styled>
-      <h2 className='title'>ALLWAYS WELCOME</h2>
-      <p className='para'>
-        Simone’s welcomes press and other inquiries for articles, video news
-        reports, blog write-ups and other mentions in the media. Feel free to
-        use our Web site as a way to get general information about us. To
-        arrange an interview or get additional information, contact
-        info@Simonesbar.com
-      </p>
-      <p className='para'>
-        The following links point toward high-resolution JPG image files which
-        may be used for media coverage about Simone’s. Please contact us
-        regarding any usage questions.
-      </p>
-      <div className='box'>
-        {Object.values(imgs).map((img, i) => (
-          <ImgBox key={i} className='img-box' img={img}>
-            <a className='icon' href={img} target='_blank'>
-              <FaSearch />
-            </a>
-          </ImgBox>
-        ))}
-      </div>
-    </Styled>
+    <Fade>
+      <Styled>
+        <h2 className='title'>ALLWAYS WELCOME</h2>
+        <p className='para'>
+          Simone’s welcomes press and other inquiries for articles, video news
+          reports, blog write-ups and other mentions in the media. Feel free to
+          use our Web site as a way to get general information about us. To
+          arrange an interview or get additional information, contact
+          info@Simonesbar.com
+        </p>
+        <p className='para'>
+          The following links point toward high-resolution JPG image files which
+          may be used for media coverage about Simone’s. Please contact us
+          regarding any usage questions.
+        </p>
+        <div className='box'>
+          {Object.values(imgs).map((img, i) => (
+            <ImgBox key={i} className='img-box' img={img}>
+              <a className='icon' href={img} target='_blank'>
+                <FaSearch />
+              </a>
+            </ImgBox>
+          ))}
+        </div>
+      </Styled>
+    </Fade>
   );
 };
 

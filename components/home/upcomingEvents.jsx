@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import TitleBanner from '../ui/titleBanner';
 import Qoute from '../ui/qoute';
+import Fade from 'react-reveal/Fade';
 
 const Styled = styled.section`
   text-align: center;
@@ -51,20 +52,28 @@ const Styled = styled.section`
 `;
 
 const UpcomingEvents = () => (
-  <Styled className='upcoming--events section'>
-    <TitleBanner
-      topTitle='GET INVOLVED'
-      title='UPCOMING EVENTS'
-      botTitle='COME LIVE UP THE FUN'
-    />
-    <div className='container'>
-      <img src='/dancing.jpg' alt='bar crowd' className='img--top' />
-      <img src='/event.png' alt='event calender' className='event--calender' />
-      <img src='/bar_crowd.jpg' alt='bar crowd' className='img--bottom' />
-    </div>
+  <Fade>
+    <Styled className='upcoming--events section'>
+      <Fade bottom>
+        <TitleBanner
+          topTitle='GET INVOLVED'
+          title='UPCOMING EVENTS'
+          botTitle='COME LIVE UP THE FUN'
+        />
+      </Fade>
+      <div className='container'>
+        <img src='/dancing.jpg' alt='bar crowd' className='img--top' />
+        <img
+          src='/event.png'
+          alt='event calender'
+          className='event--calender'
+        />
+        <img src='/bar_crowd.jpg' alt='bar crowd' className='img--bottom' />
+      </div>
 
-    <Qoute />
-  </Styled>
+      <Qoute />
+    </Styled>
+  </Fade>
 );
 
 export default UpcomingEvents;

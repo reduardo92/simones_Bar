@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Button from '../ui/button';
 import TitleBanner from '../ui/titleBanner';
+import Fade from 'react-reveal/Fade';
 
 const Styled = styled.section`
   max-width: 1400px;
@@ -101,7 +102,7 @@ const Styled = styled.section`
 const OurStory = () => (
   <Styled className='our-story'>
     <div className='box box-1'>
-      <div className='text'>
+      <div className='text fadeIn'>
         <TitleBanner
           topTitle='visit us'
           title='our story'
@@ -122,10 +123,12 @@ const OurStory = () => (
           and booths built from old pinball machines.
         </p>
       </div>
-      <img className='img-box' src='/bar_inside_angle.jpg' alt='bar image' />
+      <Fade left>
+        <img className='img-box' src='/bar_inside_angle.jpg' alt='bar image' />
+      </Fade>
     </div>
     <div className='box box-2'>
-      <div className='text'>
+      <div className='text fadeIn'>
         <p className='para'>
           The use of reclaimed materials fits in with Simone’s commitment to
           responsible and green-friendly practices which also includes a rooftop
@@ -143,10 +146,12 @@ const OurStory = () => (
           booths woven of old seat belts.
         </p>
       </div>
-      <img className='img-box' src='/inside_right.jpg' alt='bar image' />
+      <Fade right>
+        <img className='img-box' src='/inside_right.jpg' alt='bar image' />
+      </Fade>
     </div>
     <div className='box box-3'>
-      <div className='text'>
+      <div className='text fadeIn'>
         <p className='para'>
           Following the rear walls of the front room is a band of graffiti
           created by local street artists. Through the doors at the back of the
@@ -158,9 +163,13 @@ const OurStory = () => (
           Sound fun? We think it is! Come by and join us for food and libations
           in the Pilsen neighborhood of Chicago
         </p>
-        <Button toLink='/contact' title='contact us' />
+        <Fade top delay={400}>
+          <Button toLink='/contact' title='contact us' />
+        </Fade>
       </div>
-      <img className='img-box' src='/bar_inside_back.jpg' alt='bar image' />
+      <Fade left>
+        <img className='img-box' src='/bar_inside_back.jpg' alt='bar image' />
+      </Fade>
     </div>
   </Styled>
 );

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 
 const Styled = styled.div`
   width: 300px;
@@ -27,13 +28,15 @@ const Styled = styled.div`
 
 const HoursBox = ({ order }) => (
   <Styled className='hours--box' order={order}>
-    <img src='/bar_inside_angle.jpg' alt='restaurant inside image' />
-    <div className='box'>
-      <h3 className='box--title'>HOURS</h3>
-      <p className='hour'>Mon-Fri: 11:30am-2am</p>
-      <p className='hour'>Sat: 11:30am-3am</p>
-      <p className='hour'>Sun: 11:30am-2am</p>
-    </div>
+    <Fade>
+      <img src='/bar_inside_angle.jpg' alt='restaurant inside image' />
+      <div className='box'>
+        <h3 className='box--title'>HOURS</h3>
+        <p className='hour'>Mon-Fri: 11:30am-2am</p>
+        <p className='hour'>Sat: 11:30am-3am</p>
+        <p className='hour'>Sun: 11:30am-2am</p>
+      </div>
+    </Fade>
   </Styled>
 );
 

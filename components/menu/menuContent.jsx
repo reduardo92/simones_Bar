@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Fade from 'react-reveal/Fade';
 import menu from './menu';
 import TabStyled from '../ui/tabs';
 import TitleBanner from '../ui/titleBanner';
@@ -11,6 +12,11 @@ const Styled = styled.section`
     justify-items: center;
     gap: 3em;
     justify-content: center;
+  }
+
+  .para,
+  .menu--item--text {
+    text-transform: capitalize;
   }
 
   /* TAbs */
@@ -42,7 +48,7 @@ const Styled = styled.section`
   }
 
   .menu--img {
-    max-width: 340px;
+    max-width: 400px;
   }
 
   .title {
@@ -137,141 +143,140 @@ const MenuContent = () => {
   const [tab, setTab] = useState('drinks');
 
   return (
-    <Styled>
-      <div className='container'>
-        <TitleBanner
-          topTitle='CHECK IT OUT'
-          title='menu'
-          botTitle='come eat some good food'
-        />
-        <div className='taps--container'>
-          <TabStyled
-            color
-            onClick={() => setTab('drinks')}
-            active={tab === 'drinks'}
-          >
-            drinks
-          </TabStyled>
-          <TabStyled
-            color
-            onClick={() => setTab('beer')}
-            active={tab === 'beer'}
-          >
-            beer
-          </TabStyled>
-          <TabStyled
-            color
-            onClick={() => setTab('appetizers')}
-            active={tab === 'appetizers'}
-          >
-            Appetizers
-          </TabStyled>
-          <TabStyled
-            color
-            onClick={() => setTab('soupSalad')}
-            active={tab === 'soupSalad'}
-          >
-            Soups&Salads
-          </TabStyled>
-          <TabStyled
-            color
-            onClick={() => setTab('pizzas')}
-            active={tab === 'pizzas'}
-          >
-            pizzas
-          </TabStyled>
-          <TabStyled
-            color
-            onClick={() => setTab('sandwiches')}
-            active={tab === 'sandwiches'}
-          >
-            sandwiches
-          </TabStyled>
-          <TabStyled
-            color
-            onClick={() => setTab('desserts')}
-            active={tab === 'desserts'}
-          >
-            desserts
-          </TabStyled>
-          <TabStyled
-            color
-            onClick={() => setTab('brunch')}
-            active={tab === 'brunch'}
-          >
-            brunch
-          </TabStyled>
-        </div>
-        <div className='menu'>
-          {tab === 'drinks' && (
-            <>
-              <h2 className='title menu--title'>Cocktails</h2>
-              {menu.drinks.cocktails.map(({ title, text, price }, i) => (
-                <div key={title + i} className='menu--item'>
-                  <div className='menu--item--text'>
-                    <h3 className='title'>{title}</h3>
-                    <p className='para'>{text}</p>
-                  </div>
-                  <p className='price'>${price}</p>
-                </div>
-              ))}
-              <h2 className='title menu--title'>Wines</h2>
-              {menu.drinks.wines.map(({ title, text, price }, i) => (
-                <div key={title + i} className='menu--item'>
-                  <div className='menu--item--text'>
-                    <h3 className='title'>{title}</h3>
-                    <p className='para'>{text}</p>
-                  </div>
-                  <p className='price'>${price}</p>
-                </div>
-              ))}
-            </>
-          )}
-          {tab === 'beer' && (
-            <>
-              <h2 className='title menu--title'>Drafts</h2>
-              {menu.beer.drafts.map(({ title, text, price }, i) => (
-                <div key={title + i} className='menu--item'>
-                  <div className='menu--item--text'>
-                    <h3 className='title'>{title}</h3>
-                    <p className='para'>{text}</p>
-                  </div>
-                  <p className='price'>${price}</p>
-                </div>
-              ))}
-              <h2 className='title menu--title'>Packaged</h2>
-              {menu.beer.packaged.map(({ title, text, price }, i) => (
-                <div key={title + i} className='menu--item'>
-                  <div className='menu--item--text'>
-                    <h3 className='title'>{title}</h3>
-                    <p className='para'>{text}</p>
-                  </div>
-                  <p className='price'>${price}</p>
-                </div>
-              ))}
-            </>
-          )}
-          {tab !== 'drinks' &&
-            tab !== 'beer' &&
-            menu[tab].map(({ title, text, subtitle, price }, i) => (
-              <div key={title + i} className='menu--item'>
-                <div className='menu--item--text'>
-                  <h3 className='title'>{title}</h3>
-                  <p className='para'>{text}</p>
-                  {subtitle && subtitle}
-                </div>
-                <p className='price'>${price}</p>
-              </div>
-            ))}
-        </div>
-        <div className='menu--img'>
-          <img
-            src='/fast-food-lunch-dinner-hamburger-2-transparent.png'
-            alt='nacho beer image'
+    <Fade>
+      <Styled>
+        <div className='container'>
+          <TitleBanner
+            topTitle='CHECK IT OUT'
+            title='menu'
+            botTitle='come eat some good food'
           />
+          <div className='taps--container'>
+            <TabStyled
+              color
+              onClick={() => setTab('drinks')}
+              active={tab === 'drinks'}
+            >
+              drinks
+            </TabStyled>
+            <TabStyled
+              color
+              onClick={() => setTab('beer')}
+              active={tab === 'beer'}
+            >
+              beer
+            </TabStyled>
+            <TabStyled
+              color
+              onClick={() => setTab('appetizers')}
+              active={tab === 'appetizers'}
+            >
+              Appetizers
+            </TabStyled>
+            <TabStyled
+              color
+              onClick={() => setTab('soupSalad')}
+              active={tab === 'soupSalad'}
+            >
+              Soups&Salads
+            </TabStyled>
+            <TabStyled
+              color
+              onClick={() => setTab('pizzas')}
+              active={tab === 'pizzas'}
+            >
+              pizzas
+            </TabStyled>
+            <TabStyled
+              color
+              onClick={() => setTab('sandwiches')}
+              active={tab === 'sandwiches'}
+            >
+              sandwiches
+            </TabStyled>
+            <TabStyled
+              color
+              onClick={() => setTab('desserts')}
+              active={tab === 'desserts'}
+            >
+              desserts
+            </TabStyled>
+            <TabStyled
+              color
+              onClick={() => setTab('brunch')}
+              active={tab === 'brunch'}
+            >
+              brunch
+            </TabStyled>
+          </div>
+          <div className='menu'>
+            {tab === 'drinks' && (
+              <>
+                <h2 className='title menu--title'>Cocktails</h2>
+                {menu.drinks.cocktails.map(({ title, text, price }, i) => (
+                  <div key={title + i} className='menu--item'>
+                    <div className='menu--item--text'>
+                      <h3 className='title'>{title}</h3>
+                      <p className='para'>{text}</p>
+                    </div>
+                    <p className='price'>${price}</p>
+                  </div>
+                ))}
+                <h2 className='title menu--title'>Wines</h2>
+                {menu.drinks.wines.map(({ title, text, price }, i) => (
+                  <div key={title + i} className='menu--item'>
+                    <div className='menu--item--text'>
+                      <h3 className='title'>{title}</h3>
+                      <p className='para'>{text}</p>
+                    </div>
+                    <p className='price'>${price}</p>
+                  </div>
+                ))}
+              </>
+            )}
+            {tab === 'beer' && (
+              <>
+                <h2 className='title menu--title'>Drafts</h2>
+                {menu.beer.drafts.map(({ title, text, price }, i) => (
+                  <div key={title + i} className='menu--item'>
+                    <div className='menu--item--text'>
+                      <h3 className='title'>{title}</h3>
+                      <p className='para'>{text}</p>
+                    </div>
+                    <p className='price'>${price}</p>
+                  </div>
+                ))}
+                <h2 className='title menu--title'>Packaged</h2>
+                {menu.beer.packaged.map(({ title, text, price }, i) => (
+                  <div key={title + i} className='menu--item'>
+                    <div className='menu--item--text'>
+                      <h3 className='title'>{title}</h3>
+                      <p className='para'>{text}</p>
+                    </div>
+                    <p className='price'>${price}</p>
+                  </div>
+                ))}
+              </>
+            )}
+            {tab !== 'drinks' &&
+              tab !== 'beer' &&
+              menu[tab].map(({ title, text, subtitle, price }, i) => (
+                <div key={title + i} className='menu--item'>
+                  <div className='menu--item--text'>
+                    <h3 className='title'>{title}</h3>
+                    <p className='para'>{text}</p>
+                    {subtitle && subtitle}
+                  </div>
+                  <p className='price'>${price}</p>
+                </div>
+              ))}
+          </div>
+          <div className='menu--img'>
+            <img src='/menu_reverse_img.png' alt='nacho beer image' />
+          </div>
         </div>
-      </div>
-    </Styled>
+      </Styled>
+    </Fade>
   );
 };
 

@@ -88,10 +88,55 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Link.js":
+/*!****************************!*\
+  !*** ./components/Link.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\Link.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (({
+  href,
+  children
+}) => {
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
+  let className = children.props.className || '';
+
+  if (router.pathname === href) {
+    className = `${className} selected`;
+  }
+
+  return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: href,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(children, {
+    className
+  }));
+});
+
+/***/ }),
 
 /***/ "./components/contact.jsx":
 /*!********************************!*\
@@ -117,13 +162,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ui/titleBanner */ "./components/ui/titleBanner.js");
-/* harmony import */ var _ui_tabs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ui/tabs */ "./components/ui/tabs.js");
-/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
-/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _ui_icon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ui/icon */ "./components/ui/icon.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ui/titleBanner */ "./components/ui/titleBanner.js");
+/* harmony import */ var _ui_tabs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ui/tabs */ "./components/ui/tabs.js");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _ui_icon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ui/icon */ "./components/ui/icon.js");
 
 
 
@@ -145,7 +192,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_8___default.a.section`
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.section`
   text-align: center;
   padding: 0 1em;
 
@@ -252,50 +300,63 @@ const Contact = () => {
     console.log(form);
   };
 
-  return __jsx(Styled, {
-    className: "contact section",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105
-    },
-    __self: undefined
-  }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    topTitle: "GET IN TOUCH",
-    title: "CONTACT US",
-    botTitle: "SHOOT US A QUESTION",
+  return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8___default.a, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 106
     },
     __self: undefined
-  }), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, __jsx(Styled, {
+    className: "contact section",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107
+    },
+    __self: undefined
+  }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    bottom: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108
+    },
+    __self: undefined
+  }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    topTitle: "GET IN TOUCH",
+    title: "CONTACT US",
+    botTitle: "SHOOT US A QUESTION",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109
+    },
+    __self: undefined
+  }), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_13__["default"], {
     className: "info",
     href: "tel:+312668601",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: undefined
-  }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_11__["MdLocalPhone"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 112
-    },
-    __self: undefined
-  }), " (312) 666-8601"), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    className: "info",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 114
     },
     __self: undefined
-  }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_11__["MdEmail"], {
+  }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_12__["MdLocalPhone"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 115
     },
     __self: undefined
-  }), " info@simonesbar.com"), __jsx("form", {
+  }), " (312) 666-8601"), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    className: "info",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117
+    },
+    __self: undefined
+  }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_12__["MdEmail"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118
+    },
+    __self: undefined
+  }), " info@simonesbar.com")), __jsx("form", {
     className: "form",
     name: "contact",
     method: "POST",
@@ -304,7 +365,7 @@ const Contact = () => {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 122
     },
     __self: undefined
   }, __jsx("input", {
@@ -316,7 +377,7 @@ const Contact = () => {
     placeholder: "FULL NAME",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 130
     },
     __self: undefined
   }), __jsx("input", {
@@ -328,7 +389,7 @@ const Contact = () => {
     placeholder: "EMAIL",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 138
     },
     __self: undefined
   }), __jsx("input", {
@@ -340,7 +401,7 @@ const Contact = () => {
     placeholder: "PHONE NUMBER",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 146
     },
     __self: undefined
   }), __jsx("select", {
@@ -351,31 +412,31 @@ const Contact = () => {
     placeholder: "SUBJECT",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149
+      lineNumber: 154
     },
     __self: undefined
   }, __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 161
     },
     __self: undefined
   }, "Select a subject..."), __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 162
     },
     __self: undefined
   }, "General Inquiries"), __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 163
     },
     __self: undefined
   }, "Music Bookings"), __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 164
     },
     __self: undefined
   }, "Special Events")), __jsx("textarea", {
@@ -388,18 +449,18 @@ const Contact = () => {
     placeholder: "MESSAGE / QUESTION",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 166
     },
     __self: undefined
-  }), __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }), __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_11__["default"], {
     className: "form--button",
     type: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 175
     },
     __self: undefined
-  }, "send message")));
+  }, "send message"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Contact);
@@ -578,10 +639,10 @@ const Footer = () => __jsx(Styled, {
 
 /***/ }),
 
-/***/ "./components/home/about.js":
-/*!**********************************!*\
-  !*** ./components/home/about.js ***!
-  \**********************************/
+/***/ "./components/home/about.jsx":
+/*!***********************************!*\
+  !*** ./components/home/about.jsx ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -594,9 +655,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ui/titleBanner */ "./components/ui/titleBanner.js");
 /* harmony import */ var _ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ui/button */ "./components/ui/button.js");
 /* harmony import */ var _ui_hoursBox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ui/hoursBox */ "./components/ui/hoursBox.js");
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\home\\about.js";
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\home\\about.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -665,14 +729,21 @@ const About = () => {
     className: "section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 68
+    },
+    __self: undefined
+  }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    left: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
     },
     __self: undefined
   }, __jsx("div", {
     className: "about--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -681,41 +752,63 @@ const About = () => {
     botTitle: "Good Vibe for Good Day",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 71
     },
     __self: undefined
   }), __jsx("p", {
     className: "about--content--text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 76
     },
     __self: undefined
-  }, "Simone's is a unique bar and grill located in the Pilsen neighborhood of Chicago, Illinois. It's a great place to grab a craft beer, cocktail and quality grub. We are also proud to feature local and national music talent, gallery and private events."), __jsx(_ui_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: "view more",
-    toLink: "/about",
-    hoverclr: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
-  })), __jsx("img", {
-    className: "green--img",
-    src: "/gra_3s.png",
-    alt: "green restaurant img",
+  }, "Simone's is a unique bar and grill located in the Pilsen neighborhood of Chicago, Illinois. It's a great place to grab a craft beer, cocktail and quality grub. We are also proud to feature local and national music talent, gallery and private events."), __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    top: true,
+    delay: 300,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 82
     },
     __self: undefined
-  }), __jsx(_ui_hoursBox__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_ui_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: "view more",
+    toLink: "/about",
+    hoverclr: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: undefined
+  })))), __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    bottom: true,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 87
     },
     __self: undefined
-  }));
+  }, __jsx("img", {
+    className: "green--img",
+    src: "/gra_3s.png",
+    alt: "green restaurant img",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88
+    },
+    __self: undefined
+  })), __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    right: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94
+    },
+    __self: undefined
+  }, __jsx(_ui_hoursBox__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95
+    },
+    __self: undefined
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (About);
@@ -733,17 +826,20 @@ const About = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ui/titleBanner */ "./components/ui/titleBanner.js");
-/* harmony import */ var _ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ui/button */ "./components/ui/button.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ui/titleBanner */ "./components/ui/titleBanner.js");
+/* harmony import */ var _ui_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ui/button */ "./components/ui/button.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\home\\dailySpecials.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section`
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.section`
   display: grid;
   gap: 2em;
   justify-content: center;
@@ -891,37 +987,50 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section`
 const DailySpecials = ({
   showButton
 }) => {
-  return __jsx(Styled, {
-    className: "daily--specials section",
-    showButton: showButton,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 152
-    },
-    __self: undefined
-  }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    topTitle: "save up",
-    title: "daily specials",
-    botTitle: "enjoy yourself",
+  return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 153
     },
     __self: undefined
-  }), __jsx("img", {
+  }, __jsx(Styled, {
+    className: "daily--specials section",
+    showButton: showButton,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154
+    },
+    __self: undefined
+  }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    bottom: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155
+    },
+    __self: undefined
+  }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    topTitle: "save up",
+    title: "daily specials",
+    botTitle: "enjoy yourself",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 156
+    },
+    __self: undefined
+  })), __jsx("img", {
     src: "/ncaho_burger.svg",
     alt: "chip burger",
     className: "chip--burger",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 162
     },
     __self: undefined
   }), __jsx("div", {
     className: "daily--banner--container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 167
     },
     __self: undefined
   }, __jsx("img", {
@@ -930,134 +1039,134 @@ const DailySpecials = ({
     className: "burger--img",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160
+      lineNumber: 168
     },
     __self: undefined
   }), __jsx("div", {
     className: "banner",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 173
     },
     __self: undefined
   }, __jsx("h2", {
     className: "banner--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 174
     },
     __self: undefined
   }, "GET SAVING"), __jsx("ul", {
     className: "banner--ul",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 175
     },
     __self: undefined
   }, __jsx("li", {
     className: "banner--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 176
     },
     __self: undefined
   }, "Sunday:", __jsx("span", {
     className: "side--text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 178
     },
     __self: undefined
   }, "dollar off drafts until 8pm")), __jsx("li", {
     className: "banner--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168
+      lineNumber: 180
     },
     __self: undefined
   }, "Monday:", __jsx("span", {
     className: "side--text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 182
     },
     __self: undefined
   }, "PBR tallboy and any pizza $7")), __jsx("li", {
     className: "banner--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172
+      lineNumber: 184
     },
     __self: undefined
   }, "Tuesday:", __jsx("span", {
     className: "side--text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 186
     },
     __self: undefined
   }, "dollar off craft cans + bottles; $2 off nachos")), __jsx("li", {
     className: "banner--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 190
     },
     __self: undefined
   }, "Wednesday:", __jsx("span", {
     className: "side--text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 192
     },
     __self: undefined
   }, "PBR tallboy+Evan Williams shot $5; $2 off wings")), __jsx("li", {
     className: "banner--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 196
     },
     __self: undefined
   }, "Thursday:", __jsx("span", {
     className: "side--text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 198
     },
     __self: undefined
   }, "$4 well drinks (single pour only), $2 off quesadillas")), __jsx("li", {
     className: "banner--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 202
     },
     __self: undefined
   }, "Every Day Until 5pm:", __jsx("span", {
     className: "side--text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 204
     },
     __self: undefined
   }, "1/2 lb angus or vegan burger, hand cut fries and a PBR tallboy $8"))), __jsx("p", {
     className: "close--caption",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198
+      lineNumber: 210
     },
     __self: undefined
   }, "18% gratuity will be added to parties of 6 or more"), __jsx("p", {
     className: "close--caption",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201
+      lineNumber: 213
     },
     __self: undefined
-  }, "No more than two forms of payment per check/table extra side of sauce 50 cents carryout charge 75 cents"), __jsx(_ui_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "No more than two forms of payment per check/table extra side of sauce 50 cents carryout charge 75 cents"), __jsx(_ui_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     toLink: "/menu",
     title: "view more",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 217
     },
     __self: undefined
   }))), __jsx("img", {
@@ -1066,10 +1175,10 @@ const DailySpecials = ({
     className: "beer--fries",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 220
     },
     __self: undefined
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (DailySpecials);
@@ -1087,19 +1196,23 @@ const DailySpecials = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ui/titleBanner */ "./components/ui/titleBanner.js");
-/* harmony import */ var _ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ui/button */ "./components/ui/button.js");
-/* harmony import */ var _ui_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ui/tabs */ "./components/ui/tabs.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ui/titleBanner */ "./components/ui/titleBanner.js");
+/* harmony import */ var _ui_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ui/button */ "./components/ui/button.js");
+/* harmony import */ var _ui_tabs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ui/tabs */ "./components/ui/tabs.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\home\\homeMenu.jsx";
+
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
 
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section`
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.section`
   background-color: var(--primary-clr);
   margin: 5em 0;
   padding: 4em 1em 2em;
@@ -1128,12 +1241,6 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section`
 
   .tab {
     color: var(--white-clr);
-    background-color: var(--second-clr);
-    padding: 0.8em 1.3em;
-    border-radius: 5px;
-    text-transform: uppercase;
-    border: none;
-    font-weight: var(--fw-bold);
   }
 
   .menu {
@@ -1175,13 +1282,6 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section`
       border-color: var(--second-clr);
     }
   }
-
-  /* .activeTab {
-    transform: scale(0.95);
-    background-color: transparent;
-    border-color: var(--second-clr);
-    outline-color: var(--second-clr);
-  } */
 
   @media screen and (min-width: 760px) {
     .container {
@@ -1314,54 +1414,57 @@ Blanc De Camarsac Sauv Blanc`,
     className: "home--menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 241
+      lineNumber: 229
     },
     __self: undefined
   }, __jsx("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 242
+      lineNumber: 230
     },
     __self: undefined
-  }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_3__["default"], {
     topTitle: "CHECK IT OUT",
     title: "menu",
     botTitle: "come eat some good food",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 243
+      lineNumber: 231
     },
     __self: undefined
   }), __jsx("div", {
     className: "taps--container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 248
+      lineNumber: 236
     },
     __self: undefined
-  }, __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: tab === 'drinks' && 'tab',
     onClick: () => setTab('drinks'),
     active: tab === 'drinks',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 249
+      lineNumber: 237
     },
     __self: undefined
-  }, "drinks"), __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "drinks"), __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: tab === 'beer' && 'tab',
     onClick: () => setTab('beer'),
     active: tab === 'beer',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 252
+      lineNumber: 244
     },
     __self: undefined
-  }, "beer"), __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "beer"), __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: tab === 'food' && 'tab',
     onClick: () => setTab('food'),
     active: tab === 'food',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 255
+      lineNumber: 251
     },
     __self: undefined
   }, "food")), __jsx("div", {
@@ -1411,7 +1514,7 @@ Blanc De Camarsac Sauv Blanc`,
       lineNumber: 266
     },
     __self: undefined
-  }, "$", price)))), __jsx(_ui_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "$", price)))), __jsx(_ui_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     toLink: "/menu",
     title: "view more",
     bgclr: true,
@@ -1453,14 +1556,16 @@ Blanc De Camarsac Sauv Blanc`,
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ui_gridTwo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ui/gridTwo */ "./components/ui/gridTwo.js");
-/* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ui/titleBanner */ "./components/ui/titleBanner.js");
-/* harmony import */ var _ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ui/button */ "./components/ui/button.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
-/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _ui_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../ui/icon */ "./components/ui/icon.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ui_gridTwo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ui/gridTwo */ "./components/ui/gridTwo.js");
+/* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ui/titleBanner */ "./components/ui/titleBanner.js");
+/* harmony import */ var _ui_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ui/button */ "./components/ui/button.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _ui_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../ui/icon */ "./components/ui/icon.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\home\\liveMusic.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1470,7 +1575,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const StyledEvent = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div`
+
+const StyledEvent = styled_components__WEBPACK_IMPORTED_MODULE_5___default.a.div`
   .event--text {
     margin: 1em;
   }
@@ -1509,17 +1615,24 @@ const StyledEvent = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.div
     }
   }
 `;
-const Img = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.img`
+const Img = styled_components__WEBPACK_IMPORTED_MODULE_5___default.a.img`
   max-width: 600px;
   margin: 0 auto;
   filter: drop-shadow(2px 5px 3px black);
 `;
 
-const LiveMusic = () => __jsx(_ui_gridTwo__WEBPACK_IMPORTED_MODULE_1__["default"], {
+const LiveMusic = () => __jsx(_ui_gridTwo__WEBPACK_IMPORTED_MODULE_2__["default"], {
   className: "section",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 54
+    lineNumber: 55
+  },
+  __self: undefined
+}, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  bottom: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 56
   },
   __self: undefined
 }, __jsx(Img, {
@@ -1527,86 +1640,94 @@ const LiveMusic = () => __jsx(_ui_gridTwo__WEBPACK_IMPORTED_MODULE_1__["default"
   alt: "live music img",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 55
+    lineNumber: 57
   },
   __self: undefined
 }), __jsx(StyledEvent, {
   className: "event--content",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 56
+    lineNumber: 58
   },
   __self: undefined
-}, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_3__["default"], {
   topTitle: "live music",
   title: "Music & Event Inquiries",
   botTitle: "get your jam on",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 57
+    lineNumber: 59
   },
   __self: undefined
 }), __jsx("p", {
   className: "event--text",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 62
+    lineNumber: 64
   },
   __self: undefined
 }, "Simone\u2019s plays host to Chicago\u2019s wide-ranging DJ and Music entertainment. The Lab is also available for private events. For more information:"), __jsx("div", {
   className: "event--contacts",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 67
-  },
-  __self: undefined
-}, __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 68
-  },
-  __self: undefined
-}, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdEmail"], {
-  __source: {
-    fileName: _jsxFileName,
     lineNumber: 69
   },
   __self: undefined
-}), " musicbookings@simonesbar.com"), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
+}, __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 70
+  },
+  __self: undefined
+}, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdEmail"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 71
   },
   __self: undefined
-}, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdEmail"], {
+}), " musicbookings@simonesbar.com"), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_7__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 72
+    lineNumber: 73
   },
   __self: undefined
-}), " eventbookings@simonesbar.com"), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
-  href: "tel:+312668601",
+}, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdEmail"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 74
   },
   __self: undefined
-}, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdLocalPhone"], {
+}), " eventbookings@simonesbar.com"), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  href: "tel:+312668601",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 75
+    lineNumber: 76
   },
   __self: undefined
-}), " (312) 666-8601")), __jsx(_ui_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+}, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdLocalPhone"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 77
+  },
+  __self: undefined
+}), " (312) 666-8601")), __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  top: true,
+  delay: 400,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 80
+  },
+  __self: undefined
+}, __jsx(_ui_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
   toLink: "/contact",
   title: "contact us",
   hoverclr: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 78
+    lineNumber: 81
   },
   __self: undefined
-})));
+})))));
 
 /* harmony default export */ __webpack_exports__["default"] = (LiveMusic);
 
@@ -1627,9 +1748,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ui/titleBanner */ "./components/ui/titleBanner.js");
 /* harmony import */ var _ui_qoute__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ui/qoute */ "./components/ui/qoute.jsx");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\home\\upcomingEvents.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1681,11 +1805,24 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section`
   }
 `;
 
-const UpcomingEvents = () => __jsx(Styled, {
+const UpcomingEvents = () => __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 55
+  },
+  __self: undefined
+}, __jsx(Styled, {
   className: "upcoming--events section",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 54
+    lineNumber: 56
+  },
+  __self: undefined
+}, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  bottom: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 57
   },
   __self: undefined
 }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1694,14 +1831,14 @@ const UpcomingEvents = () => __jsx(Styled, {
   botTitle: "COME LIVE UP THE FUN",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 55
+    lineNumber: 58
   },
   __self: undefined
-}), __jsx("div", {
+})), __jsx("div", {
   className: "container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 60
+    lineNumber: 64
   },
   __self: undefined
 }, __jsx("img", {
@@ -1710,7 +1847,7 @@ const UpcomingEvents = () => __jsx(Styled, {
   className: "img--top",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 61
+    lineNumber: 65
   },
   __self: undefined
 }), __jsx("img", {
@@ -1719,7 +1856,7 @@ const UpcomingEvents = () => __jsx(Styled, {
   className: "event--calender",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 62
+    lineNumber: 66
   },
   __self: undefined
 }), __jsx("img", {
@@ -1728,16 +1865,16 @@ const UpcomingEvents = () => __jsx(Styled, {
   className: "img--bottom",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 63
+    lineNumber: 71
   },
   __self: undefined
 })), __jsx(_ui_qoute__WEBPACK_IMPORTED_MODULE_3__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 66
+    lineNumber: 74
   },
   __self: undefined
-}));
+})));
 
 /* harmony default export */ __webpack_exports__["default"] = (UpcomingEvents);
 
@@ -1871,8 +2008,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Link */ "./components/Link.js");
 /* harmony import */ var _ui_socials__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ui/socials */ "./components/ui/socials.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\navbar.js";
 
@@ -1884,11 +2020,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   position: ${props => props.navScroll ? 'fixed' : 'absolute'};
+  padding: 0.5em 0;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   background-color: ${props => props.navScroll ? 'var(--primary-clr)' : 'none'};
+  animation: 1s fadeIn linear;
 
   &::before {
     content: '';
@@ -1921,6 +2059,11 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
     }
   }
 
+  /* Change Nav Links Active */
+  .selected {
+    color: var(--accent-clr) !important;
+  }
+
   /* Top head */
   .head--top {
     display: flex;
@@ -1941,7 +2084,12 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
         font-size: 0.85rem;
         width: max-content;
         cursor: pointer;
+        transition: var(--ease--in--out--02s);
 
+        &:hover,
+        &:focus {
+          color: var(--accent-clr);
+        }
         svg {
           margin-right: 0.5em;
         }
@@ -2063,8 +2211,8 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   @media screen and (min-width: 1024px) {
     position: ${props => props.navScroll ? 'fixed' : 'absolute'};
     margin-top: ${props => props.navScroll ? '0' : '1em'};
-    display: grid;
-    justify-content: center;
+    max-width: ${props => props.navScroll ? '100%' : '1200px'};
+    margin: 0 auto;
 
     .brand-logo,
     .nav--toggle {
@@ -2090,6 +2238,7 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
       padding: 0;
       justify-self: center;
       width: 1000px;
+      margin: 0 auto;
 
       .info {
         flex-direction: column;
@@ -2162,34 +2311,34 @@ const Navbar = () => {
     navScroll: navScroll,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 281
+      lineNumber: 294
     },
     __self: undefined
   }, __jsx("div", {
     className: "head--top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 287
+      lineNumber: 300
     },
     __self: undefined
   }, __jsx(_ui_socials__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 288
+      lineNumber: 301
     },
     __self: undefined
-  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }), __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 289
+      lineNumber: 302
     },
     __self: undefined
   }, __jsx("a", {
     className: "brand-logo--top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 290
+      lineNumber: 303
     },
     __self: undefined
   }, __jsx("img", {
@@ -2197,14 +2346,14 @@ const Navbar = () => {
     alt: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 291
+      lineNumber: 304
     },
     __self: undefined
   }))), __jsx("div", {
     className: "info",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 294
+      lineNumber: 307
     },
     __self: undefined
   }, __jsx("a", {
@@ -2212,13 +2361,13 @@ const Navbar = () => {
     href: "tel:+312668601",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 295
+      lineNumber: 308
     },
     __self: undefined
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaPhone"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 296
+      lineNumber: 309
     },
     __self: undefined
   }), "(312) 666-8601"), __jsx("a", {
@@ -2227,34 +2376,34 @@ const Navbar = () => {
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 299
+      lineNumber: 312
     },
     __self: undefined
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaMapMarkerAlt"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 304
+      lineNumber: 317
     },
     __self: undefined
   }), "960 W 18th, Chicago, IL 60608"))), __jsx("nav", {
     className: "navbar",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 310
+      lineNumber: 323
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 311
+      lineNumber: 324
     },
     __self: undefined
   }, __jsx("a", {
     className: "brand-logo ",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 312
+      lineNumber: 325
     },
     __self: undefined
   }, __jsx("img", {
@@ -2262,14 +2411,14 @@ const Navbar = () => {
     alt: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 313
+      lineNumber: 326
     },
     __self: undefined
   }))), __jsx("div", {
     className: "nav--toggle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 316
+      lineNumber: 329
     },
     __self: undefined
   }, __jsx("span", {
@@ -2277,21 +2426,21 @@ const Navbar = () => {
     onClick: () => setToggle(!toggle),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 317
+      lineNumber: 330
     },
     __self: undefined
   })), __jsx("ul", {
     className: "navbar--group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 322
+      lineNumber: 335
     },
     __self: undefined
   }, __jsx("div", {
     className: "nav--toggle inside-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 323
+      lineNumber: 336
     },
     __self: undefined
   }, __jsx("span", {
@@ -2299,154 +2448,154 @@ const Navbar = () => {
     onClick: () => setToggle(!toggle),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 324
+      lineNumber: 337
     },
     __self: undefined
   })), __jsx("li", {
     className: "nav--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 329
+      lineNumber: 342
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 330
+      lineNumber: 343
     },
     __self: undefined
   }, __jsx("a", {
     className: "nav--link__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 331
+      lineNumber: 344
     },
     __self: undefined
-  }, " HOME"))), __jsx("li", {
+  }, "HOME"))), __jsx("li", {
     className: "nav--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 334
+      lineNumber: 347
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/about",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 335
+      lineNumber: 348
     },
     __self: undefined
   }, __jsx("a", {
     className: "nav--link__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 336
+      lineNumber: 349
     },
     __self: undefined
   }, "ABOUT"))), __jsx("li", {
     className: "nav--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 339
+      lineNumber: 352
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 340
+      lineNumber: 353
     },
     __self: undefined
   }, __jsx("a", {
     className: "nav--link__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 341
+      lineNumber: 354
     },
     __self: undefined
   }, "MENU"))), __jsx("li", {
     className: "nav--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 344
+      lineNumber: 357
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/privateEvents",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 345
+      lineNumber: 358
     },
     __self: undefined
   }, __jsx("a", {
     className: "nav--link__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 346
+      lineNumber: 359
     },
     __self: undefined
   }, "PRIVATE EVENTS"))), __jsx("li", {
     className: "nav--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 349
+      lineNumber: 362
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/photoGallery",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 350
+      lineNumber: 363
     },
     __self: undefined
   }, __jsx("a", {
     className: "nav--link__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 351
+      lineNumber: 364
     },
     __self: undefined
   }, "PHOTO GALLERY"))), __jsx("li", {
     className: "nav--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 354
+      lineNumber: 367
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/press",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 355
+      lineNumber: 368
     },
     __self: undefined
   }, __jsx("a", {
     className: "nav--link__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 356
+      lineNumber: 369
     },
     __self: undefined
   }, "PRESS"))), __jsx("li", {
     className: "nav--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 359
+      lineNumber: 372
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     href: "/contact",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 360
+      lineNumber: 373
     },
     __self: undefined
   }, __jsx("a", {
     className: "nav--link__item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 361
+      lineNumber: 374
     },
     __self: undefined
   }, "CONTACT"))))));
@@ -2473,9 +2622,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button */ "./components/ui/button.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\ui\\banner.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
@@ -2513,7 +2665,14 @@ const Banner = ({
   return __jsx(Styled, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 35
+    },
+    __self: undefined
+  }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    bottom: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
     },
     __self: undefined
   }, banner === 'home' ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("img", {
@@ -2521,33 +2680,41 @@ const Banner = ({
     className: "title-img",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 39
     },
     __self: undefined
   }), __jsx("h2", {
     className: "subtitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 40
     },
     __self: undefined
-  }, "Bar & Grill in the heart of Pilsen"), __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Bar & Grill in the heart of Pilsen"), __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    top: true,
+    delay: 500,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "visit us",
     toLink: "/contact",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 42
     },
     __self: undefined
-  })) : __jsx("img", {
+  }))) : __jsx("img", {
     src: titleImg,
     className: "title-img",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 46
     },
     __self: undefined
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Banner);
@@ -2569,9 +2736,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\ui\\button.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a`
@@ -2608,7 +2778,7 @@ const Button = ({
   href: toLink,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 31
+    lineNumber: 32
   },
   __self: undefined
 }, __jsx(Styled, {
@@ -2617,7 +2787,7 @@ const Button = ({
   className: "button",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 32
+    lineNumber: 33
   },
   __self: undefined
 }, title));
@@ -2850,9 +3020,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\ui\\hoursBox.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   width: 300px;
@@ -2886,7 +3059,13 @@ const HoursBox = ({
   order: order,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 29
+    lineNumber: 30
+  },
+  __self: undefined
+}, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 31
   },
   __self: undefined
 }, __jsx("img", {
@@ -2894,45 +3073,45 @@ const HoursBox = ({
   alt: "restaurant inside image",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 30
+    lineNumber: 32
   },
   __self: undefined
 }), __jsx("div", {
   className: "box",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 31
+    lineNumber: 33
   },
   __self: undefined
 }, __jsx("h3", {
   className: "box--title",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 32
+    lineNumber: 34
   },
   __self: undefined
 }, "HOURS"), __jsx("p", {
   className: "hour",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 33
+    lineNumber: 35
   },
   __self: undefined
 }, "Mon-Fri: 11:30am-2am"), __jsx("p", {
   className: "hour",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 34
+    lineNumber: 36
   },
   __self: undefined
 }, "Sat: 11:30am-3am"), __jsx("p", {
   className: "hour",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 35
+    lineNumber: 37
   },
   __self: undefined
-}, "Sun: 11:30am-2am")));
+}, "Sun: 11:30am-2am"))));
 
 /* harmony default export */ __webpack_exports__["default"] = (HoursBox);
 
@@ -2979,9 +3158,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button */ "./components/ui/button.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\\components\\ui\\imgBanner.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section`
@@ -3055,39 +3237,54 @@ const ImgBanner = ({
   posiion: posiion,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 70
+    lineNumber: 71
   },
   __self: undefined
 }, __jsx("div", {
   className: "img--banner__img",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 71
+    lineNumber: 72
   },
   __self: undefined
-}), __jsx("h2", {
+}), __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  top: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 73
+  },
+  __self: undefined
+}, __jsx("h2", {
   className: "title",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 72
+    lineNumber: 74
   },
   __self: undefined
 }, title), __jsx("h3", {
   className: "subtitle",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 73
+    lineNumber: 75
   },
   __self: undefined
-}, subtile), __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}, subtile), __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  top: true,
+  delay: 300,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 76
+  },
+  __self: undefined
+}, __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
   toLink: toLink,
   title: btnTitle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 74
+    lineNumber: 77
   },
   __self: undefined
-}));
+}))));
 
 /* harmony default export */ __webpack_exports__["default"] = (ImgBanner);
 
@@ -3170,16 +3367,32 @@ var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\simones_bar\
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   position: relative;
-  padding: 0 2em;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto;
-  justify-items: center;
-  gap: 0.2em;
-  max-width: 650px;
-  margin: 0 auto;
+
+  .qoute {
+    position: relative;
+    padding: 0 2em;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 0.2em;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: var(--ease--in--out--02s);
+  }
+
+  .activeQoute {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    animation: fadeOp 1s 0s ease-out;
+  }
 
   .left--qoute,
   .right--qoute {
@@ -3193,50 +3406,122 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
     color: var(--accent-clr);
     font-family: var(--fn-reenie);
     font-size: 2.4rem;
+    text-transform: capitalize;
     -webkit-text-stroke: 0.1px var(--accent-clr);
   }
 `;
 
 const Qoute = () => {
+  const {
+    0: current,
+    1: setCurrent
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const next = (current + 1) % reviews.length;
+    const id = setTimeout(() => setCurrent(next), 6000);
+    return () => clearTimeout(id);
+  }, [current]);
   return __jsx(Styled, {
-    className: "qoute",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 58
+    },
+    __self: undefined
+  }, reviews.map(({
+    id,
+    name,
+    text
+  }) => __jsx("div", {
+    key: id,
+    className: `qoute ${id === current ? 'activeQoute' : ''}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
     },
     __self: undefined
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaQuoteLeft"], {
     className: "left--qoute",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 64
     },
     __self: undefined
   }), __jsx("p", {
     className: "review",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 65
     },
     __self: undefined
-  }, "Came here on a friday night for the first time. I had such a good time. The drinks are great staff was very attentive. I especially loved the vegan burger i had. Very nice atmosphere. Definatly recommend this bar and will be back soon!!!"), __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaQuoteRight"], {
+  }, text), __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaQuoteRight"], {
     className: "right--qoute",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 66
     },
     __self: undefined
   }), __jsx("h3", {
     className: "review--name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 67
     },
     __self: undefined
-  }, "Linda Colon Corona"));
+  }, name))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Qoute);
+const reviews = [{
+  id: 0,
+  name: 'Linda Colon Corona',
+  text: `Came here on a friday night for the first time. I had such a good time.
+    The drinks are great staff was very attentive. I especially loved the
+    vegan burger i had. Very nice atmosphere. Definatly recommend this bar
+    and will be back soon!!!`
+}, {
+  id: 1,
+  name: 'Lorenzo Casarrubias',
+  text: 'Stop in for a drink and good conversation with Stevie and Abel.  Pizza and PBR on Mondays is a solid deal.  Love the rotation of 80s classics on the CRT'
+}, {
+  id: 2,
+  name: 'Bobby Martin',
+  text: 'Nice Atmosphere, Great Drink selection. Good vibes'
+}, {
+  id: 3,
+  name: 'Poonam Sharma',
+  text: `This place will surprise you. Fast, efficient, and courteous service.
+    The decor is unique and amazing. Very good selection of beers.`
+}, {
+  id: 4,
+  name: 'Sean Rapp',
+  text: `Staple of the neighborhood.  They do everything with quality and are a model of consistency with both food and drinks. A "come as you are" bar/eatery without any pretentious nonsense you see elsewhere. Come eat, drink and exchange some banter.`
+}, {
+  id: 5,
+  name: 'Paul Carrano',
+  text: `Awesome place. Food is good, service is great and atmosphere is fantastic. Daily booze specials along with fun nights like comedy, trivia, etc.`
+}, {
+  id: 6,
+  name: 'Saul Duarte',
+  text: `Ask for just sweet potato fries! They give you a mix of sweet potato fries and regular fries, and they're both tasty, but the sweet potato are amazing!`
+}, {
+  id: 7,
+  name: 'Angela Jacobs',
+  text: `Delicious contemporary food & drinks w/ fusion flare. Great spot in Pilsen.`
+}, {
+  id: 8,
+  name: 'Gabriel Breshears',
+  text: `Simone's does a little bit of everything. The beer specials keep me coming back and the karoke nights. I miss the burlesque shows but love the atmosphere. Would come back more if they bring back burlesque. They are a great bar, I have literally met best friends ther`
+}, {
+  id: 9,
+  name: 'Abraham Jimenez',
+  text: `If in Pilsen you have to Simones! Local drafts and local bands! This place brings out the best in us!
+    `
+}, {
+  id: 10,
+  name: 'natalia rodriguez',
+  text: `Burger was cooked on point and flavorful, pizza was crispy and soft with the right amount of toppings
+    `
+}];
 
 /***/ }),
 
@@ -3273,7 +3558,7 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
 
     &:hover,
     &:focus {
-      color: var(--second-clr);
+      color: var(--accent-clr);
     }
   }
 
@@ -9089,7 +9374,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var _components_home_about__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/home/about */ "./components/home/about.js");
+/* harmony import */ var _components_home_about__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/home/about */ "./components/home/about.jsx");
 /* harmony import */ var _components_ui_imgBanner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ui/imgBanner */ "./components/ui/imgBanner.js");
 /* harmony import */ var _components_home_liveMusic__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/home/liveMusic */ "./components/home/liveMusic.jsx");
 /* harmony import */ var _components_home_homeMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/home/homeMenu */ "./components/home/homeMenu.jsx");
@@ -9196,7 +9481,7 @@ const IndexPage = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["d
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -9227,6 +9512,17 @@ module.exports = require("@brainhubeu/react-carousel");
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
@@ -9293,6 +9589,17 @@ module.exports = require("react-icons/md");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "react-reveal/Fade":
+/*!************************************!*\
+  !*** external "react-reveal/Fade" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-reveal/Fade");
 
 /***/ }),
 
