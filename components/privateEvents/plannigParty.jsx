@@ -28,29 +28,27 @@ const Styled = styled.section`
     margin-top: 1em;
   }
 
-  .box-2 
-    .img-box {
-      margin: 1em auto;
+  .box-2 .img-box {
+    margin: 1em auto;
+  }
+
+  .contract {
+    display: block;
+    margin-top: 1.5em;
+    color: var(--primary-clr);
+    font-weight: var(--fw-bold);
+    transition: var(--ease--in--out--02s);
+
+    &:hover,
+    &:focus {
+      color: var(--second-clr);
     }
   }
 
-  .contract  {
-    display: block;
-      margin-top: 1.5em;
-      color: var(--primary-clr);
-      font-weight: var(--fw-bold);
-      transition: var(--ease--in--out--02s);
-
-      &:hover,&:focus {
-        color: var(--second-clr);
-      }
-    }
-
-
   @media screen and (min-width: 1300px) {
-.img-box {
-  max-width: 800px;
-}
+    .img-box {
+      max-width: 800px;
+    }
   }
 `;
 
