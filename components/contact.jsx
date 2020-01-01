@@ -83,6 +83,12 @@ const Styled = styled.section`
   }
 `;
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 const Contact = () => {
   const [form, setForm] = useState({
     name: '',
@@ -98,8 +104,15 @@ const Contact = () => {
     setForm(form => ({ ...form, [target.name]: target.value }));
 
   const handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...form })
+    })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error));
+
     e.preventDefault();
-    console.log(form);
   };
 
   return (
@@ -119,14 +132,7 @@ const Contact = () => {
           </Icon>
         </Fade>
 
-        <form
-          className='form'
-          name='contact'
-          method='POST'
-          data-netlify-recaptcha='true'
-          data-netlify='true'
-          onSubmit={handleSubmit}
-        >
+        <form className='form' onSubmit={handleSubmit}>
           <input type='hidden' name='form-name' value='contact' />
           <input
             onChange={handleChange}
