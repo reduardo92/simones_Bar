@@ -83,13 +83,8 @@ const Styled = styled.section`
   }
 `;
 
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-};
-
 const Contact = () => {
+  const [status, setStatus] = useState();
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -103,16 +98,24 @@ const Contact = () => {
   const handleChange = ({ target }) =>
     setForm(form => ({ ...form, [target.name]: target.value }));
 
-  const handleSubmit = e => {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...form })
-    })
-      .then(() => alert('Success!'))
-      .catch(error => alert(error));
-
-    e.preventDefault();
+  const handleSubmit = ev => {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        setStatus('SUCCESS');
+      } else {
+        setStatus('ERROR');
+      }
+    };
+    xhr.send(data);
+    setStatus();
   };
 
   return (
@@ -132,7 +135,12 @@ const Contact = () => {
           </Icon>
         </Fade>
 
-        <form className='form' onSubmit={handleSubmit}>
+        <form
+          className='form'
+          onSubmit={handleSubmit}
+          action='https://formspree.io/mnqjlvaz'
+          method='POST'
+        >
           <input type='hidden' name='form-name' value='contact' />
           <input
             onChange={handleChange}
@@ -179,9 +187,14 @@ const Contact = () => {
             rows='9'
             placeholder='MESSAGE / QUESTION'
           ></textarea>
-          <TabStyled className='form--button' type='submit'>
-            send message
-          </TabStyled>
+          {status === 'SUCCESS' ? (
+            <p>Thanks!</p>
+          ) : (
+            <TabStyled className='form--button' type='submit'>
+              send message
+            </TabStyled>
+          )}
+          {status === 'ERROR' && <p>Ooops! There was an error.</p>}
         </form>
       </Styled>
     </Fade>
