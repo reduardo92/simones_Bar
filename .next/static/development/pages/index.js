@@ -1400,7 +1400,7 @@ var UpcomingEvents = function UpcomingEvents() {
     },
     __self: this
   }), __jsx("img", {
-    src: "/event.png",
+    src: "/january.png",
     alt: "event calender",
     className: "event--calender",
     __source: {
@@ -2171,7 +2171,11 @@ var Carousell = function Carousell() {
     4: '/PinballBooth.jpg',
     5: '/pizza.jpg',
     6: '/patio.jpg',
-    7: '/santi.jpg'
+    7: '/santi.jpg',
+    8: '/Outisde_night.jpg',
+    9: '/patio_two.jpg',
+    10: '/santigo_cocktail.jpg',
+    11: '/burger_two.jpg'
   };
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
     setWindowSize(window.outerWidth);
@@ -2180,7 +2184,7 @@ var Carousell = function Carousell() {
     className: "carousel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 58
     },
     __self: this
   }, __jsx(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -2190,7 +2194,7 @@ var Carousell = function Carousell() {
     animationSpeed: 2000,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 59
     },
     __self: this
   }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(imgs).map(function (img, i) {
@@ -2200,7 +2204,7 @@ var Carousell = function Carousell() {
       alt: "img",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 66
       },
       __self: this
     });
@@ -28459,7 +28463,7 @@ var IndexPage = function IndexPage() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5Csimones_bar%5Cpages%5Cindex.js ***!
   \********************************************************************************************************************************************************/
@@ -28482,5 +28486,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

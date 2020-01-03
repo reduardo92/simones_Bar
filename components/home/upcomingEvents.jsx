@@ -64,7 +64,7 @@ const UpcomingEvents = () => (
       <div className='container'>
         <img src='/dancing.jpg' alt='bar crowd' className='img--top' />
         <img
-          src='/event.png'
+          src='/january.png'
           alt='event calender'
           className='event--calender'
         />

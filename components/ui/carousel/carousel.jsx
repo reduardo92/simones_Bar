@@ -43,7 +43,11 @@ const Carousell = () => {
     4: '/PinballBooth.jpg',
     5: '/pizza.jpg',
     6: '/patio.jpg',
-    7: '/santi.jpg'
+    7: '/santi.jpg',
+    8: '/Outisde_night.jpg',
+    9: '/patio_two.jpg',
+    10: '/santigo_cocktail.jpg',
+    11: '/burger_two.jpg'
   };
 
   useEffect(() => {

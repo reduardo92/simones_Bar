@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1932,7 +1932,7 @@ const UpcomingEvents = () => __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4_
   },
   __self: undefined
 }), __jsx("img", {
-  src: "/event.png",
+  src: "/january.png",
   alt: "event calender",
   className: "event--calender",
   __source: {
@@ -2944,7 +2944,11 @@ const Carousell = () => {
     4: '/PinballBooth.jpg',
     5: '/pizza.jpg',
     6: '/patio.jpg',
-    7: '/santi.jpg'
+    7: '/santi.jpg',
+    8: '/Outisde_night.jpg',
+    9: '/patio_two.jpg',
+    10: '/santigo_cocktail.jpg',
+    11: '/burger_two.jpg'
   };
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
     setWindowSize(window.outerWidth);
@@ -2953,7 +2957,7 @@ const Carousell = () => {
     className: "carousel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 58
     },
     __self: undefined
   }, __jsx(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -2963,7 +2967,7 @@ const Carousell = () => {
     animationSpeed: 2000,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 59
     },
     __self: undefined
   }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(imgs).map((img, i) => __jsx("img", {
@@ -2972,7 +2976,7 @@ const Carousell = () => {
     alt: "img",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 66
     },
     __self: undefined
   }))));
@@ -9562,7 +9566,7 @@ const IndexPage = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["d
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

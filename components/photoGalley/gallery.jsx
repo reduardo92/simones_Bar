@@ -50,7 +50,17 @@ const Gallery = () => {
     22: '/music.jpg',
     23: '/weeding.jpg',
     24: '/pizza.jpg',
-    25: '/maverick.jpg'
+    25: '/maverick.jpg',
+    26: '/back_bar.jpg',
+    27: '/burger_two.jpg',
+    28: '/draft_beer.jpg',
+    29: '/drink_two.jpg',
+    30: '/food.jpg',
+    31: '/hotDog.jpg',
+    32: '/Outisde_night.jpg',
+    33: '/patio_two.jpg',
+    34: '/santigo_cocktail.jpg',
+    35: '/skull.jpg'
   };
 
   return (
