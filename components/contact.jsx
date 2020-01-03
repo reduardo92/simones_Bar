@@ -10,10 +10,6 @@ const Styled = styled.section`
   text-align: center;
   padding: 0 1em;
 
-  .title--banner {
-    /* margin-bottom: 1em; */
-  }
-
   .info {
     font-weight: var(--fw-bold);
     margin: 0.5em 0;
@@ -59,6 +55,15 @@ const Styled = styled.section`
     }
   }
 
+  /* Alert msg to subject */
+  .alert--msg {
+    outline-color: #af0000;
+  }
+
+  .alert--title {
+    color: #af0000;
+  }
+
   .form--button {
     background-color: var(--primary-clr);
     justify-self: center;
@@ -69,6 +74,14 @@ const Styled = styled.section`
       outline-color: var(--primary-clr);
       color: var(--second-clr);
     }
+  }
+
+  .msg {
+    justify-self: center;
+    color: var(--primary-clr);
+    grid-column: 1 / 3;
+    font-weight: bold;
+    font-size: 1.5rem;
   }
 
   @media screen and (min-width: 760px) {
@@ -85,6 +98,7 @@ const Styled = styled.section`
 
 const Contact = () => {
   const [status, setStatus] = useState();
+  const [msg, setMsg] = useState(null);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -98,8 +112,18 @@ const Contact = () => {
   const handleChange = ({ target }) =>
     setForm(form => ({ ...form, [target.name]: target.value }));
 
+  const clearMsg = () => setInterval(() => setMsg(null), 8000);
+
   const handleSubmit = ev => {
     ev.preventDefault();
+    if (subject === 'Select a subject...' || subject === '') {
+      setMsg('please choose a subject');
+      clearMsg();
+      return;
+    }
+
+    console.log(form);
+
     const form = ev.target;
     const data = new FormData(form);
     const xhr = new XMLHttpRequest();
@@ -115,7 +139,8 @@ const Contact = () => {
       }
     };
     xhr.send(data);
-    setStatus();
+
+    setInterval(() => setStatus(), 8000);
   };
 
   return (
@@ -134,7 +159,7 @@ const Contact = () => {
             <MdEmail /> info@simonesbar.com
           </Icon>
         </Fade>
-
+        {msg && <h3 className='alert--title'>{msg}</h3>}
         <form
           className='form'
           onSubmit={handleSubmit}
@@ -149,29 +174,32 @@ const Contact = () => {
             type='text'
             className='input--link name'
             placeholder='FULL NAME'
+            required
           />
           <input
             onChange={handleChange}
             value={email}
             name='email'
-            type='text'
+            type='email'
             className='input--link email--form'
             placeholder='EMAIL'
+            required
           />
           <input
             onChange={handleChange}
             value={phone}
             name='phone'
-            type='text'
+            type='number'
             className='input--link phone'
             placeholder='PHONE NUMBER'
+            required
           />
           <select
             onChange={handleChange}
             value={subject}
             name='subject'
-            className='input--link subject'
-            placeholder='SUBJECT'
+            className={`input--link subject ${msg && 'alert--msg'}`}
+            required
           >
             <option>Select a subject...</option>
             <option>General Inquiries</option>
@@ -186,15 +214,18 @@ const Contact = () => {
             cols='30'
             rows='9'
             placeholder='MESSAGE / QUESTION'
+            required
           ></textarea>
           {status === 'SUCCESS' ? (
-            <p>Thanks!</p>
+            <p className='msg'>Message Sent!</p>
           ) : (
             <TabStyled className='form--button' type='submit'>
               send message
             </TabStyled>
           )}
-          {status === 'ERROR' && <p>Ooops! There was an error.</p>}
+          {status === 'ERROR' && (
+            <p className='msg'>Ooops! There was an error.</p>
+          )}
         </form>
       </Styled>
     </Fade>

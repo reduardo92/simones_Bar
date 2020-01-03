@@ -93,7 +93,7 @@ function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_cor
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_7__["default"])(["\n  text-align: center;\n  padding: 0 1em;\n\n  .title--banner {\n    /* margin-bottom: 1em; */\n  }\n\n  .info {\n    font-weight: var(--fw-bold);\n    margin: 0.5em 0;\n  }\n\n  .form {\n    display: grid;\n    gap: 2em;\n    align-items: center;\n    padding-top: 1.5em;\n    max-width: 1100px;\n    margin: 0 auto;\n  }\n\n  .input--link,\n  .textarea {\n    color: var(--second-clr);\n    font-weight: var(--fw-bold);\n    font-size: 0.9rem;\n    text-align: center;\n    outline: 2px solid var(--second-clr);\n    border: none;\n\n    &::placeholder {\n      text-align: center;\n    }\n  }\n\n  .input--link {\n    padding: 1em;\n    transition: var(--ease--in--out--02s);\n\n    &:focus {\n      outline-color: var(--accent-clr);\n    }\n  }\n\n  .textarea {\n    padding-top: 1em;\n    transition: var(--ease--in--out--02s);\n    &:focus {\n      outline-color: var(--accent-clr);\n    }\n  }\n\n  .form--button {\n    background-color: var(--primary-clr);\n    justify-self: center;\n    &:hover,\n    &focus {\n      background-color: transparent;\n      border-color: var(--primary-clr);\n      outline-color: var(--primary-clr);\n      color: var(--second-clr);\n    }\n  }\n\n  @media screen and (min-width: 760px) {\n    .form {\n      grid-template-columns: repeat(2, 1fr);\n    }\n\n    .textarea,\n    .form--button {\n      grid-column: 1 / 3;\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_7__["default"])(["\n  text-align: center;\n  padding: 0 1em;\n\n  .info {\n    font-weight: var(--fw-bold);\n    margin: 0.5em 0;\n  }\n\n  .form {\n    display: grid;\n    gap: 2em;\n    align-items: center;\n    padding-top: 1.5em;\n    max-width: 1100px;\n    margin: 0 auto;\n  }\n\n  .input--link,\n  .textarea {\n    color: var(--second-clr);\n    font-weight: var(--fw-bold);\n    font-size: 0.9rem;\n    text-align: center;\n    outline: 2px solid var(--second-clr);\n    border: none;\n\n    &::placeholder {\n      text-align: center;\n    }\n  }\n\n  .input--link {\n    padding: 1em;\n    transition: var(--ease--in--out--02s);\n\n    &:focus {\n      outline-color: var(--accent-clr);\n    }\n  }\n\n  .textarea {\n    padding-top: 1em;\n    transition: var(--ease--in--out--02s);\n    &:focus {\n      outline-color: var(--accent-clr);\n    }\n  }\n\n  /* Alert msg to subject */\n  .alert--msg {\n    outline-color: #af0000;\n  }\n\n  .alert--title {\n    color: #af0000;\n  }\n\n  .form--button {\n    background-color: var(--primary-clr);\n    justify-self: center;\n    &:hover,\n    &focus {\n      background-color: transparent;\n      border-color: var(--primary-clr);\n      outline-color: var(--primary-clr);\n      color: var(--second-clr);\n    }\n  }\n\n  .msg {\n    justify-self: center;\n    color: var(--primary-clr);\n    grid-column: 1 / 3;\n    font-weight: bold;\n    font-size: 1.5rem;\n  }\n\n  @media screen and (min-width: 760px) {\n    .form {\n      grid-template-columns: repeat(2, 1fr);\n    }\n\n    .textarea,\n    .form--button {\n      grid-column: 1 / 3;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -112,15 +112,23 @@ function _templateObject() {
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_10__["default"].section(_templateObject());
 
 var Contact = function Contact() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_8__["useState"])({
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_8__["useState"])(),
+      status = _useState[0],
+      setStatus = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_8__["useState"])(null),
+      msg = _useState2[0],
+      setMsg = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_8__["useState"])({
     name: '',
     email: '',
     phone: '',
     subject: '',
     message: ''
   }),
-      form = _useState[0],
-      setForm = _useState[1];
+      form = _useState3[0],
+      setForm = _useState3[1];
 
   var name = form.name,
       email = form.email,
@@ -135,29 +143,63 @@ var Contact = function Contact() {
     });
   };
 
-  var handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
+  var clearMsg = function clearMsg() {
+    return setInterval(function () {
+      return setMsg(null);
+    }, 8000);
+  };
+
+  var handleSubmit = function handleSubmit(ev) {
+    ev.preventDefault();
+
+    if (subject === 'Select a subject...' || subject === '') {
+      setMsg('please choose a subject');
+      clearMsg();
+      return;
+    }
+
     console.log(form);
+    var form = ev.target;
+    var data = new FormData(form);
+    var xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader('Accept', 'application/json');
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+
+      if (xhr.status === 200) {
+        form.reset();
+        setStatus('SUCCESS');
+      } else {
+        setStatus('ERROR');
+      }
+    };
+
+    xhr.send(data);
+    setInterval(function () {
+      return setStatus();
+    }, 8000);
   };
 
   return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_9___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 147
     },
     __self: this
   }, __jsx(Styled, {
     className: "contact section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 148
     },
     __self: this
   }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_9___default.a, {
     bottom: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 149
     },
     __self: this
   }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -166,7 +208,7 @@ var Contact = function Contact() {
     botTitle: "SHOOT US A QUESTION",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 150
     },
     __self: this
   }), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -174,109 +216,126 @@ var Contact = function Contact() {
     href: "tel:+312668601",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 155
     },
     __self: this
   }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_13__["MdLocalPhone"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 156
     },
     __self: this
   }), " (312) 666-8601"), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_14__["default"], {
     className: "info",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 158
     },
     __self: this
   }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_13__["MdEmail"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 159
     },
     __self: this
-  }), " info@simonesbar.com")), __jsx("form", {
-    className: "form",
-    name: "contact",
-    method: "POST",
-    "data-netlify-recaptcha": "true",
-    "data-netlify": "true",
-    onSubmit: handleSubmit,
+  }), " info@simonesbar.com")), msg && __jsx("h3", {
+    className: "alert--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 162
+    },
+    __self: this
+  }, msg), __jsx("form", {
+    className: "form",
+    onSubmit: handleSubmit,
+    action: "https://formspree.io/mnqjlvaz",
+    method: "POST",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 163
     },
     __self: this
   }, __jsx("input", {
+    type: "hidden",
+    name: "form-name",
+    value: "contact",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 169
+    },
+    __self: this
+  }), __jsx("input", {
     onChange: handleChange,
     value: name,
     name: "name",
     type: "text",
     className: "input--link name",
     placeholder: "FULL NAME",
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 170
     },
     __self: this
   }), __jsx("input", {
     onChange: handleChange,
     value: email,
     name: "email",
-    type: "text",
+    type: "email",
     className: "input--link email--form",
     placeholder: "EMAIL",
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 179
     },
     __self: this
   }), __jsx("input", {
     onChange: handleChange,
     value: phone,
     name: "phone",
-    type: "text",
+    type: "number",
     className: "input--link phone",
     placeholder: "PHONE NUMBER",
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 188
     },
     __self: this
   }), __jsx("select", {
     onChange: handleChange,
     value: subject,
     name: "subject",
-    className: "input--link subject",
-    placeholder: "SUBJECT",
+    className: "input--link subject ".concat(msg && 'alert--msg'),
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 197
     },
     __self: this
   }, __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 204
     },
     __self: this
   }, "Select a subject..."), __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 205
     },
     __self: this
   }, "General Inquiries"), __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 206
     },
     __self: this
   }, "Music Bookings"), __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 207
     },
     __self: this
   }, "Special Events")), __jsx("textarea", {
@@ -287,20 +346,35 @@ var Contact = function Contact() {
     cols: "30",
     rows: "9",
     placeholder: "MESSAGE / QUESTION",
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 209
     },
     __self: this
-  }), __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }), status === 'SUCCESS' ? __jsx("p", {
+    className: "msg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 220
+    },
+    __self: this
+  }, "Message Sent!") : __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_12__["default"], {
     className: "form--button",
     type: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 222
     },
     __self: this
-  }, "send message"))));
+  }, "send message"), status === 'ERROR' && __jsx("p", {
+    className: "msg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 227
+    },
+    __self: this
+  }, "Ooops! There was an error."))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Contact);
@@ -27443,7 +27517,7 @@ var contact = function contact() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 3:
 /*!*****************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5Csimones_bar%5Cpages%5Ccontact.js ***!
   \*****************************************************************************************************************************************************************/
@@ -27466,5 +27540,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[3,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=contact.js.map

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -197,10 +197,6 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.section`
   text-align: center;
   padding: 0 1em;
 
-  .title--banner {
-    /* margin-bottom: 1em; */
-  }
-
   .info {
     font-weight: var(--fw-bold);
     margin: 0.5em 0;
@@ -246,6 +242,15 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.section`
     }
   }
 
+  /* Alert msg to subject */
+  .alert--msg {
+    outline-color: #af0000;
+  }
+
+  .alert--title {
+    color: #af0000;
+  }
+
   .form--button {
     background-color: var(--primary-clr);
     justify-self: center;
@@ -256,6 +261,14 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.section`
       outline-color: var(--primary-clr);
       color: var(--second-clr);
     }
+  }
+
+  .msg {
+    justify-self: center;
+    color: var(--primary-clr);
+    grid-column: 1 / 3;
+    font-weight: bold;
+    font-size: 1.5rem;
   }
 
   @media screen and (min-width: 760px) {
@@ -271,6 +284,14 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.section`
 `;
 
 const Contact = () => {
+  const {
+    0: status,
+    1: setStatus
+  } = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])();
+  const {
+    0: msg,
+    1: setMsg
+  } = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])(null);
   const {
     0: form,
     1: setForm
@@ -295,29 +316,57 @@ const Contact = () => {
     [target.name]: target.value
   }));
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const clearMsg = () => setInterval(() => setMsg(null), 8000);
+
+  const handleSubmit = ev => {
+    ev.preventDefault();
+
+    if (subject === 'Select a subject...' || subject === '') {
+      setMsg('please choose a subject');
+      clearMsg();
+      return;
+    }
+
     console.log(form);
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader('Accept', 'application/json');
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+
+      if (xhr.status === 200) {
+        form.reset();
+        setStatus('SUCCESS');
+      } else {
+        setStatus('ERROR');
+      }
+    };
+
+    xhr.send(data);
+    setInterval(() => setStatus(), 8000);
   };
 
   return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 147
     },
     __self: undefined
   }, __jsx(Styled, {
     className: "contact section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 148
     },
     __self: undefined
   }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_8___default.a, {
     bottom: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 149
     },
     __self: undefined
   }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -326,7 +375,7 @@ const Contact = () => {
     botTitle: "SHOOT US A QUESTION",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 150
     },
     __self: undefined
   }), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -334,109 +383,126 @@ const Contact = () => {
     href: "tel:+312668601",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 155
     },
     __self: undefined
   }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_12__["MdLocalPhone"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 156
     },
     __self: undefined
   }), " (312) 666-8601"), __jsx(_ui_icon__WEBPACK_IMPORTED_MODULE_13__["default"], {
     className: "info",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 158
     },
     __self: undefined
   }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_12__["MdEmail"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 159
     },
     __self: undefined
-  }), " info@simonesbar.com")), __jsx("form", {
-    className: "form",
-    name: "contact",
-    method: "POST",
-    "data-netlify-recaptcha": "true",
-    "data-netlify": "true",
-    onSubmit: handleSubmit,
+  }), " info@simonesbar.com")), msg && __jsx("h3", {
+    className: "alert--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 162
+    },
+    __self: undefined
+  }, msg), __jsx("form", {
+    className: "form",
+    onSubmit: handleSubmit,
+    action: "https://formspree.io/mnqjlvaz",
+    method: "POST",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 163
     },
     __self: undefined
   }, __jsx("input", {
+    type: "hidden",
+    name: "form-name",
+    value: "contact",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 169
+    },
+    __self: undefined
+  }), __jsx("input", {
     onChange: handleChange,
     value: name,
     name: "name",
     type: "text",
     className: "input--link name",
     placeholder: "FULL NAME",
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 170
     },
     __self: undefined
   }), __jsx("input", {
     onChange: handleChange,
     value: email,
     name: "email",
-    type: "text",
+    type: "email",
     className: "input--link email--form",
     placeholder: "EMAIL",
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 179
     },
     __self: undefined
   }), __jsx("input", {
     onChange: handleChange,
     value: phone,
     name: "phone",
-    type: "text",
+    type: "number",
     className: "input--link phone",
     placeholder: "PHONE NUMBER",
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 188
     },
     __self: undefined
   }), __jsx("select", {
     onChange: handleChange,
     value: subject,
     name: "subject",
-    className: "input--link subject",
-    placeholder: "SUBJECT",
+    className: `input--link subject ${msg && 'alert--msg'}`,
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 197
     },
     __self: undefined
   }, __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 204
     },
     __self: undefined
   }, "Select a subject..."), __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 205
     },
     __self: undefined
   }, "General Inquiries"), __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 206
     },
     __self: undefined
   }, "Music Bookings"), __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 207
     },
     __self: undefined
   }, "Special Events")), __jsx("textarea", {
@@ -447,20 +513,35 @@ const Contact = () => {
     cols: "30",
     rows: "9",
     placeholder: "MESSAGE / QUESTION",
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 209
     },
     __self: undefined
-  }), __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }), status === 'SUCCESS' ? __jsx("p", {
+    className: "msg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 220
+    },
+    __self: undefined
+  }, "Message Sent!") : __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_11__["default"], {
     className: "form--button",
     type: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 222
     },
     __self: undefined
-  }, "send message"))));
+  }, "send message"), status === 'ERROR' && __jsx("p", {
+    className: "msg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 227
+    },
+    __self: undefined
+  }, "Ooops! There was an error."))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Contact);
@@ -9481,7 +9562,7 @@ const IndexPage = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["d
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
