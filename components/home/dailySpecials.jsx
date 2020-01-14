@@ -6,6 +6,8 @@ import Button from '../ui/button';
 const Styled = styled.section`
   display: grid;
   gap: 2em;
+  grid-gap: 2em;
+
   justify-content: center;
 
   .beer--fries,
@@ -19,6 +21,8 @@ const Styled = styled.section`
     position: relative;
     display: grid;
     gap: 2em;
+    grid-gap: 2em;
+
     justify-items: center;
   }
 
@@ -34,6 +38,8 @@ const Styled = styled.section`
     display: grid;
     background-color: var(--white-clr);
     gap: 0.8em;
+    grid-gap: 0.8em;
+
     border: 0.7em solid var(--second-clr);
     color: var(--primary-clr);
     font-weight: var(--fw-bold);
@@ -58,6 +64,8 @@ const Styled = styled.section`
     &--ul {
       display: grid;
       gap: 1em;
+      grid-gap: 1em;
+
       margin: 1em 0;
     }
   }

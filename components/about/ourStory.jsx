@@ -9,6 +9,7 @@ const Styled = styled.section`
   text-align: center;
   display: grid;
   gap: 1em;
+  grid-gap: 1em;
 
   .para {
     margin: 1em 1em;
@@ -21,6 +22,7 @@ const Styled = styled.section`
   .box {
     display: grid;
     gap: 3em;
+    grid-gap: 3em;
   }
 
   .box-3 .text {
@@ -38,6 +40,7 @@ const Styled = styled.section`
     .box {
       grid-template-columns: repeat(2, 1fr);
       gap: 0;
+      grid-gap: 0;
     }
     .img-box {
       height: 100%;
@@ -55,6 +58,7 @@ const Styled = styled.section`
   @media screen and (min-width: 1300px) {
     margin: 5em auto;
     gap: 1.5em;
+    grid-gap: 1.5em;
 
     .box {
       .text {

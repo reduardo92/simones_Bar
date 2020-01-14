@@ -13,6 +13,7 @@ const Styled = styled.section`
     display: grid;
     justify-items: center;
     gap: 3em;
+    grid-gap: 3em;
   }
 
   /* title--banner */
@@ -40,6 +41,8 @@ const Styled = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
     gap: 3em;
+    grid-gap: 3em;
+
     width: 100%;
   }
 

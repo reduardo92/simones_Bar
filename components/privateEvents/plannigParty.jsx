@@ -7,6 +7,7 @@ const Styled = styled.section`
   text-align: center;
   display: grid;
   gap: 1em;
+  grid-gap: 1em;
 
   .title {
     color: var(--primary-clr);

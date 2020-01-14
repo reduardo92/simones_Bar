@@ -18,6 +18,8 @@ const Styled = styled.section`
   .form {
     display: grid;
     gap: 2em;
+    grid-gap: 2em;
+
     align-items: center;
     padding-top: 1.5em;
     max-width: 1100px;

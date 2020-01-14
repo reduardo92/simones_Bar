@@ -11,6 +11,8 @@ const Styled = styled.section`
     display: grid;
     justify-items: center;
     gap: 3em;
+    grid-gap: 3em;
+
     justify-content: center;
   }
 
@@ -24,6 +26,8 @@ const Styled = styled.section`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5em;
+    grid-gap: 0.5em;
+
     justify-content: space-between;
     width: 100%;
     align-items: center;
@@ -43,6 +47,8 @@ const Styled = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
     gap: 3em;
+    grid-gap: 3em;
+
     padding: 0 1em;
     width: 100%;
   }

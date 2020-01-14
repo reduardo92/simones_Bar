@@ -9,6 +9,8 @@ const Styled = styled.section`
   text-align: center;
   display: grid;
   gap: 1em;
+  grid-gap: 1em;
+
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: center;
   align-items: center;

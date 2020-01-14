@@ -12,6 +12,8 @@ const Styled = styled.footer`
   .content {
     display: grid;
     gap: 1em;
+    grid-gap: 1em;
+
     padding: 2em 0;
     max-width: 1400px;
     margin: 0 auto;
@@ -20,6 +22,8 @@ const Styled = styled.footer`
   .addresse {
     display: grid;
     gap: 0.5em;
+    grid-gap: 0.5em;
+
     justify-content: center;
   }
 
@@ -31,6 +35,8 @@ const Styled = styled.footer`
   .hours {
     display: grid;
     gap: 0.3em;
+    grid-gap: 0.3em;
+
     justify-content: center;
   }
 

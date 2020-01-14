@@ -9,6 +9,7 @@ const Styled = styled.section`
   text-align: center;
   display: grid;
   gap: 1em;
+  grid-gap: 1em;
 
   .title {
     color: var(--primary-clr);
@@ -22,6 +23,8 @@ const Styled = styled.section`
   .box {
     display: grid;
     gap: 1em;
+    grid-gap: 1em;
+
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     justify-items: center;
     align-items: center;

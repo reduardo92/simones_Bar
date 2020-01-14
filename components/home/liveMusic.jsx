@@ -14,6 +14,8 @@ const StyledEvent = styled.div`
   .event--contacts {
     display: grid;
     gap: 0.5em;
+    grid-gap: 0.5em;
+
     margin-bottom: 2.5em;
   }
 
