@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Fade from 'react-reveal/Fade';
 import menu from './menu';
 import TabStyled from '../ui/tabs';
 import TitleBanner from '../ui/titleBanner';
 import styled from 'styled-components';
+import StateContext from '../context/StateContext';
 
 const Styled = styled.section`
   margin: 3em 1em 5em;
@@ -146,7 +147,8 @@ const Styled = styled.section`
 `;
 
 const MenuContent = () => {
-  const [tab, setTab] = useState('drinks');
+  // const [tab, setTab] = useState('drinks');
+  const { tab, setTab } = useContext(StateContext);
 
   return (
     <Fade>

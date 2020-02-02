@@ -32,7 +32,7 @@ const menu = () => (
       toLink='/contact'
     />
     <GridTwo className='mr-a max-width'>
-      <HoursBox order />
+      <HoursBox order={'true'} />
       <Qoute />
     </GridTwo>
     <Carousell />

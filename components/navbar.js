@@ -1,8 +1,9 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import Link from '../components/Link';
 import Socials from './ui/socials';
+import StateContext from './context/StateContext';
 
 const Styled = styled.div`
   position: ${props => (props.navScroll ? 'fixed' : 'absolute')};
@@ -271,24 +272,7 @@ const Styled = styled.div`
 `;
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
-  const [navScroll, setNavScroll] = useState(false);
-  const [navheight, setNavHeight] = useState(null);
-  const navRef = useRef();
-
-  useEffect(() => {
-    setNavHeight(navRef.current.scrollHeight);
-
-    // if (navheight === null) return;
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > navheight) {
-        setNavScroll(true);
-      } else {
-        setNavScroll(false);
-      }
-    });
-  }, [navheight]);
+  const { toggle, setToggle, navScroll, navRef } = useContext(StateContext);
 
   return (
     <Styled
@@ -341,37 +325,51 @@ const Navbar = () => {
           </div>
           <li className='nav--link'>
             <Link href='/'>
-              <a className='nav--link__item'>HOME</a>
+              <a className='nav--link__item' onClick={() => setToggle(false)}>
+                HOME
+              </a>
             </Link>
           </li>
           <li className='nav--link'>
             <Link href='/about'>
-              <a className='nav--link__item'>ABOUT</a>
+              <a className='nav--link__item' onClick={() => setToggle(false)}>
+                ABOUT
+              </a>
             </Link>
           </li>
           <li className='nav--link'>
             <Link href='/menu'>
-              <a className='nav--link__item'>MENU</a>
+              <a className='nav--link__item' onClick={() => setToggle(false)}>
+                MENU
+              </a>
             </Link>
           </li>
           <li className='nav--link'>
             <Link href='/privateEvents'>
-              <a className='nav--link__item'>PRIVATE EVENTS</a>
+              <a className='nav--link__item' onClick={() => setToggle(false)}>
+                PRIVATE EVENTS
+              </a>
             </Link>
           </li>
           <li className='nav--link'>
             <Link href='/photoGallery'>
-              <a className='nav--link__item'>PHOTO GALLERY</a>
+              <a className='nav--link__item' onClick={() => setToggle(false)}>
+                PHOTO GALLERY
+              </a>
             </Link>
           </li>
           <li className='nav--link'>
             <Link href='/press'>
-              <a className='nav--link__item'>PRESS</a>
+              <a className='nav--link__item' onClick={() => setToggle(false)}>
+                PRESS
+              </a>
             </Link>
           </li>
           <li className='nav--link'>
             <Link href='/contact'>
-              <a className='nav--link__item'>CONTACT</a>
+              <a className='nav--link__item' onClick={() => setToggle(false)}>
+                CONTACT
+              </a>
             </Link>
           </li>
         </ul>
@@ -381,9 +379,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// toggle scroll nav
-
-// .navbar {
-//   padding: .2em 3em;
-// }

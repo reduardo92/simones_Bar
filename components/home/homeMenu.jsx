@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 import TitleBanner from '../ui/titleBanner';
 import Button from '../ui/button';

@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import styled from 'styled-components';
+import StateContext from '../../context/StateContext';
 
 const Styled = styled.section`
   width: 100%;
@@ -33,7 +34,7 @@ const Styled = styled.section`
 `;
 
 const Carousell = () => {
-  const [windowSize, setWindowSize] = useState(0);
+  const { setCarosuel } = useContext(StateContext);
 
   const imgs = {
     0: '/burger.jpg',
@@ -50,14 +51,10 @@ const Carousell = () => {
     11: '/burger_two.jpg'
   };
 
-  useEffect(() => {
-    setWindowSize(window.outerWidth);
-  }, []);
-
   return (
     <Styled className='carousel'>
       <Carousel
-        slidesPerPage={windowSize < 768 ? 1 : 4}
+        slidesPerPage={setCarosuel()}
         infinite
         autoPlay={3000}
         animationSpeed={2000}
